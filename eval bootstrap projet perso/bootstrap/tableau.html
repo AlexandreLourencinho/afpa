@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <title>Les tableaux de chez jarditou</title>
+</head>
+
+<body>
+                                                <!-- div pincipale container fluide/flex -->
+<div class="container-fluid">
+                                                <!-- header avec logo et tout le jardin  -->
+    <header class="d-flex row justify-content-between col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 m-0">
+        <div class=" d-none d-lg-block col-12 col-sm-6 col-md-8 col-lg-4">
+            <a href="../bootstrap/index.html"><img src="../bootstrap/IMG/jarditou_logo.jpg" class="img-fluid w-50" alt="Logo jarditou" title="Logo jarditou" id="logo"></a>
+        </div>
+        <div class="d-flex justify-content-end align-items-end col-12 col-sm-6 col-md-4 col-lg-8 p-0" id="toutjardin">
+            <p class="mr-2 d-none d-lg-block h2 font-weight-normal">Tout le jardin</p>
+        </div>
+    </header>  
+                                                <!-- navbar qui se collapse en menu burger -->
+      <nav class="navbar shadow navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="../bootstrap/index.html">Jarditou : le site officiel</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+          <div class="collapse navbar-collapse" id="navbar1">
+                                                                <!-- LIENS DE NAVIGATION -->
+              <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="../bootstrap/index.html">Acceuil jarditou</a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="../bootstrap/tableau.html">tableaux jarditou</a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="../bootstrap/contact.html" tabindex="-1">contactez jarditou</a>
+                  </li>
+              </ul>
+                                                                <!-- BARRE DE RECHERCHE -->
+              <form class="form-inline my-2 my-lg-0">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Votre promotion" aria-label="Search">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Recherche</button>
+              </form>
+          </div>
+      </nav>
+                                                <!-- logo promotion jarditou lames de terrasse  -->
+          <div class="p-0 col-12 col-md-12 col-lg-12">
+              <img src="../bootstrap/IMG/promotion.jpg" class="w-100 img-fluid" title="depensez votre argent chez nous PUTAIN" alt="Image de promotion de lames de terasses" id="promo">
+          </div>
+                                                  <!-- tableau responsive jarditou scrollable -->
+    <table class="col-12 col-lg-12 table-responsive-sm pl-0">
+        <thead class="table-active">
+            <tr>
+                <th class="col border">Photo</th>
+                <th class="col border">ID</th>
+                <th class="col border">Catégorie</th>
+                <th class="col border">Libellé</th>
+                <th class="col border">Prix</th>
+                <th class="col border">Couleur</th>
+            </tr>
+        </thead>
+                <tbody>
+                                                                            <!-- LIGNE 1 -->
+                    <tr class="bg-warning">
+                        <td class="border"><img src="../bootstrap/IMG/7.jpg" width="100" class="img-fluid" title="barbecue Aramis" alt="Barbecue de couleur brune de marque Aramis"></td>
+                        <td class="border">7</td>
+                        <td class="border">Barbecues</td>
+                        <td class="border">Aramis</td>
+                        <td class="border">110.00€</td>
+                        <td class="border">Brun</td>
+                    </tr>
+                                                                                <!-- LIGNE 2 -->
+                    <tr>
+                        <td class="border"><img src="../bootstrap/IMG/8.jpg" width="100" title="barbecue de marque Athos" alt="barbecue noir de marque Athos"></td>
+                        <td>8</td>
+                        <td>Barbecues</td>
+                        <td>Athos</td>
+                        <td>249.99€</td>
+                        <td>Noir</td>
+                    </tr>
+                                                                                <!-- LIGNE 3  -->
+                    <tr class="bg-warning">
+                        <td class="border"><img src="../bootstrap/IMG/11.jpg" width="100" title="barbecue Chromé de marque Clatronic" alt=" barbecue chromé de marque clatronic"> </td>
+                        <td class="border">11</td>
+                        <td class="border">Barbecues</td>
+                        <td class="border">Clatronic</td>
+                        <td class="border">135.90€</td>
+                        <td class="border">Chrome</td>
+                    </tr>
+                                                                                 <!-- LIGNE 4 -->
+                    <tr>
+                        <td class="border"><img src="../bootstrap/IMG/12.jpg" width="100" title=" Barbecue Camping Noir" alt="barbecue de la marque camping de couleur noire"></td>
+                        <td class="border">12</td>
+                        <td class="border">Barbecues</td>
+                        <td class="border">Camping</td>
+                        <td class="border">88.00€</td>
+                        <td class="border">Noir</td>
+                    </tr>
+                                                                                <!-- LIGNE 5 -->
+                    <tr class="bg-warning">
+                        <td class="border"><img src="../bootstrap/IMG/13.jpg" width="100" title="brouette verte marque green" alt=" une brouette verte de la marque green"> </td>
+                        <td class="border">13</td>
+                        <td class="border">Brouette</td>
+                        <td class="border">Green</td>
+                        <td class="border">49.00€</td>
+                        <td class="border">verte</td>
+                    </tr>
+                </tbody>
+    </table>
+                                                        <!-- footer avec navbar et menu burger -->
+      <footer class="footer p-0 col-12 col-md-12 col-lg-12">
+          <nav class="navbar shadow navbar-expand-lg navbar-light bg-dark">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar2" aria-controls="navbar2" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbar2">
+                  <ul class="navbar-nav mr-auto">
+                      <li class="nav-item active">
+                          <a class="nav-link text-light" href="../bootstrap/IMG/404-1.png">Mentions légales</a>
+                      </li>
+                      <li class="nav-item active">
+                          <a class="nav-link text-light" href="../bootstrap/IMG/404-2.jpg">Horaires</a>
+                      </li>
+                      <li class="nav-item active">
+                          <a class="nav-link text-light" href="../bootstrap/IMG/404-3.png" tabindex="-1">Plan du site</a>
+                      </li>
+                  </ul>
+              </div>
+          </nav>
+      </footer>
+</div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

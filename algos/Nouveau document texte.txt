@@ -1,0 +1,1 @@
+(BIS=="bisex" et M==2 ET J<=29 ET J>0) OU ((J<=31 ET J>0) ET (M==1 OU M==3 OU M==5 OU M==7 OU M==8 OU M==10 OU M==12)) OU ((J<=30 et J>0) ET (M==4 ou M==6 OU M==9 OU M==11))

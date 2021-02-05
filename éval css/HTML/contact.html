@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>JARDITOUT</title>
+        <link rel="stylesheet" href="../CSS/style.css">
+    </head>
+<body>
+<!-- header + logo  -->
+    <header>
+            <div id="corphead">
+                <div id="logoh"><img src="../HTML/IMG/jarditou_logo.jpg" id="logo" title="logo jarditou" alt="logo jarditou"></div>
+                <div id="texteh">Tout le jardin</div>
+                <p> La qualité depuis 70 ans.</p>
+            </div>
+    </header>
+<!-- navbar + liens   -->
+    <nav>
+        <ul>
+            <li><a href="../HTML/index.html"  title="accueil"> Accueil </a></li>
+            <li><a href="../HTML/tableaux.html" title="tableaux">Tableaux</a></li>
+            <li><a href="../HTML/contact.html" title="contact"> Contact</a></li>
+        </ul>
+ </nav>
+<!-- image promo jarditou  -->
+    <img id="promo" src="../HTML/IMG/promotion.jpg" title="venez ACHETER nos LAMES DE TERRASSE" alt="illustration lames de terrasse">
+
+<div id="corpcont">
+    <div id="tablo1">
+                    <h1>Contact</h1>
+                    <hr>
+                    <h2> * Ces champs sont obligatoires</h2>
+<!-- formulaire de contact -->
+                    <form action="http://bienvu.net/script.php" method="post" enctype="multipart/form-data">
+
+                                <fieldset>
+                                    <legend>Vos coordonées</legend>
+<!-- NOM -->
+                                        <label for="nom"> Votre nom * : </label><input type="text" placeholder="votre nom de famille ici" size="20" maxlength="20" required id="nom"><p>
+<!-- PRENOM -->
+                                        </p><label for="prénom"> Votre prénom * : </label><input type="text" placeholder="votre prénom ici" size="20" maxlength="20" required id="prénom"><p>
+<!-- SEXE -->
+                                        <label for="sexe">Sexe * :</label> <input type="radio" name="sexe" value="masculin" required >masculin 
+                                        <input type="radio" name="sexe" value="féminin" id="sexe">féminin<p>
+<!-- DATE DE NAISSANCE -->
+                                        <label for="date">date de naissance * : </label><input type="date" name="ddn" id="date" required ></p>
+<!-- CODE POSTAL -->
+                                        <label for="codepo"> Code postal * : </label><input type="text" name="codep" id="codepo" required ><br>
+<!-- ADRESSE -->
+                                        <label for="adressep"> Adresse : </label><input type="text" name="adresse" id="adressep"><br>
+<!-- VILLE -->
+                                        <label for="villep"> Ville : </label><input type="text" name="ville" id="villep"><br>
+<!-- MAIL -->
+                                        <label for="mail"> E-mail * : </label><input type="text" name="email" id="mail" placeholder="gérard.mentvu@ça.fr" required>
+                                </fieldset>
+
+                                <fieldset>
+<!-- DEMANDE -->
+                                    <legend>Votre demande</legend>
+<!-- SUJET -->
+                                            <label for="sujetp"> Sujet * : </label>
+                                            <select name="sujet" required id="sujetp">
+                                                    <option value="" selected>-</option>
+                                                    <option> Mes commandes </option>
+                                                    <option> Question sur un produit </option>
+                                                    <option> Réclamation </option>
+                                                    <option> Autre </option>
+                                            </select><br>
+<!-- ZONE TEXTE DEMANDE -->
+                                            <label for="com"> Votre question * :</label><textarea name="commentaire" id="com" rows="10" cols="15" placeholder="votre commentaire ici" required> 
+                                            </textarea>
+                                            <p>
+                                            <input type="checkbox" name="accord" value="accordok" required> * J'accepte le traitement informatique de ce formulaire.<p>
+                                            <button type="submit"> envoyer </button>
+                                            <button type="reset"> Annuler</button> 
+                                            </p>
+                                </fieldset>
+
+                    </form>
+    </div>
+<!-- colonne droite -->
+            <div id="colonne3"> 
+            [COLONNE DROITE]
+            </div>    
+</div>
+<!-- footer + liens 404 -->
+    <footer>
+        <ul>
+            <li><a href="../HTML/IMG/404-1.png">Mentions légales</a></li>
+            <li><a href="../HTML/IMG/404-2.jpg">Horaires</a></li>
+            <li><a href="../HTML/IMG/404-3.png" tabindex="-1">Plan du site</a></li>
+        </ul>
+    </footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

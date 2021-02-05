@@ -1,0 +1,170 @@
+html {
+    font-size: 100%;
+}
+/* barre de navigation en noir + hauteur */
+nav {
+    display: flex;
+    background-color: black;
+}
+
+/* disposition en ligne des liens de navigation  */
+li {
+    display: inline;
+}
+
+/* couleurs des liens non cliqués */
+a:link {
+color: white;
+}
+/* couleur des liens lors du click  */
+a:hover {
+    color: tomato;
+}
+/* couleur des liens déjà visités  */
+a:visited {
+    color: aqua;
+}
+/* aucune putain d'idée j''arrive pas a faire la diff avec au dessus  */
+a:focus {
+    color: brown;
+}
+/* couleur du footer , du texte du footer et la hauteur de la bande noire en px  */
+footer {
+    display: flex;
+    background-color: black;
+    color: white;
+    align-items: center;
+}
+/* taille de l'image promo */
+#promo {
+    width: 100% ;
+}
+/* enlève le display de "la qualité depuis 70 ans " car disparue de l'exercice */
+header p {
+    display: none;
+}
+/* taille logo jarditou */
+#logo {
+    width: 300px ;
+    height: 100px ;
+}
+
+/* colonne droite ici pour la page index  */
+
+#corps {
+    display: flex;
+    align-items: center;
+    flex-flow: row;
+    align-items: stretch;
+}
+#texte {
+    width: 70%;
+}
+#colonne {
+    background-color: dimgray;
+    text-align: left;
+    flex-grow: 2;
+}
+#ligne {
+    display: none;
+}
+
+/* colonne droite ici pour la page tableaux */
+/* première div flex */
+#corpstablo {
+    display: flex;
+}
+/* div de la colonne + couleur + alignement texte + taille max a 2*  */
+#colonne2 {
+    background-color: dimgray;
+    text-align: left;
+    flex-grow: 2;
+}
+/* rétrécisemment div box tableau */
+#tablo {
+    width: 70%;
+}
+/* pas sur de l'utilité pour le hr du tableau */
+#lignetablo {
+    width: auto;
+}
+/* 
+Colonne droite ici pour la page contact */
+/* display flex de la div principale */
+#corpcont {
+    display: flex;
+}
+/* taille du tableau contact  */
+#tablo1 {
+    width: 70%;
+}
+/* réglages de la div colonne cf au dessus  */
+#colonne3 {
+    background-color: dimgray;
+    text-align: left;
+    flex-grow: 2;
+}
+#corphead {
+    display: flex;
+    flex-flow: row ;
+    justify-content:flex-start;
+    align-items: flex-end;
+}
+/* taille logo en pourcent  */
+#logo {
+    height: 80%;
+}
+/* texte tout le jardin rajouté dans l'exercice */
+#texteh {
+    margin-left: 20%;
+    font-size: 35px;
+}
+
+/* partie pour les écrans inférieurs ou égaux a 768px */
+
+@media screen and (max-width: 768px)
+{
+    #promo {
+        max-width: 100%;
+        height: auto;
+    }
+    #nav {
+        display: flex;
+        max-width: 100%;
+        height: auto;
+    }
+    #texte {
+        font-size: 1.3rem;
+        width: 100%;
+    }
+    #logo {
+        max-width: 100%;
+        height: auto;
+    }
+    #texteh {
+        display: none;
+    }
+    #colonne {
+        display: none;
+    }
+    li {
+        display: list-item;
+        font-size: 1.3rem;
+    }
+    #colonne2 {
+        display: none;
+    }
+    #colonne3 {
+        display: none;
+    }
+    #tablo1 {
+        width: 100%;
+    }
+#tablo {
+    width: 100%;
+    overflow: auto;
+}
+}
+
+
+
