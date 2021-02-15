@@ -40,7 +40,7 @@ function checkForm(form)
         form.nom.focus();
         return false;
     }
-      check  prenom vide
+    //   check  prenom vide
     if(form.prenom.value == "") {
         document.getElementById("prenomerr").style.color = "#ff0000";
         document.getElementById("prenomerr").innerHTML = "Le champ est vide!";
@@ -130,7 +130,7 @@ function checkForm(form)
         Check1.setCustomValidity("Vous devez cocher cette case pour nous autoriser à traiter ce formulaire.");
         return false;
       }
-      validation was successful
+    //   validation was successful
     return true;
 
 
