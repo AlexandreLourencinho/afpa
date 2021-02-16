@@ -54,7 +54,7 @@
 
                                                              <!-- FORMULAIRE DE CONTACT JARDITOU  -->
             <div id="formulaire" class="col-12p-0">
-                <form class="shadow-lg mb-3" id="formulaire" action="http://bienvu.net/script.php" method="POST" onsubmit="return checkForm(this)">
+                <form class="shadow-lg mb-3" id="formulaire" action="http://bienvu.net/script.php" method="POST"  onsubmit="return checkForm(this)">
                   <p class="ml-2">* : Ces zones sont obligatoires</p>
                   <h1 class="ml-2">Vos coordonnées</h1>
                                                                               <!-- NOM -->
@@ -67,18 +67,18 @@
                   <span id="prenerr"></span><br>
                                                                                <!-- SEXE -->
                               <label for="sexe" class="ml-2" id="sexe"> Sexe *</label><br>
-                                  <input id="sexe" type="radio" name="sexe" value="homme" class="ml-3"> hommme
+                                  <input id="sexe" type="radio" name="sexe" value="homme" class="ml-3" required> hommme
                                   <input type="radio" name="sexe" value="femme"> femme
                                   <input type="radio" name="sexe" value="neutre"> neutre
                   <br><br>
                                                                         <!-- DATE DE NAISSANCE -->
-                      <label class="control-label col-12 col-md-6 col-lg-10" for="daten">Date de naissance *</label>
+                      <label class="control-label col-12 col-md-6 col-lg-10" for="daten" required>Date de naissance *</label>
                           <input class="form-control ml-lg-2 col-12 col-md-6 col-lg-2" id="daten" name="datenaissance" type="date"  >
                   <br>
                                                                             <!-- CODE POSTAL -->
                       <label for="codep" class="ml-2 col-12 col-md-6 col-lg-8">Code postal *</label><br>
                           <input type="text" class="ml-lg-2 form-control col-12 col-md-6 col-lg-4" id="codep" name="codepostal">
-                          <span id="daterr"></span><br>
+                          <span id="codeperr"></span><br>
                                                                             <!-- ADRESSE -->
                       <label for="adresse" class="ml-lg-2 col-12 col-md-6">Adresse</label><br>
                           <input type="text" class="form-control ml-lg-2 col-12 col-md-6" id="adresse" name="adresse">
@@ -88,15 +88,16 @@
                           <input type="text" class="form-control ml-lg-2 col-12 col-md-6 col-lg-4" id="ville" name="ville">
                           <span id="villerr"></span><br>
                                                                             <!-- EMAIL -->
-                      <label for="example-email-input" class="ml-lg-2 col-12 col-md-6 col-lg-8">Email *</label>
+                      <label for="example-email-input" class="ml-lg-2 col-12 col-md-6 col-lg-8" required>Email *</label>
                           <input class="form-control ml-lg-2 col-12 col-md-6 col-lg-4" type="email" placeholder="votre email" id="mail" name="mail"  >
-                          <span id="emailerr"></span><br>
+                          <!-- <span id="emailerr"></span> -->
+                          <br>
                   <h2 class="ml-2">Votre demande</h2><br>
 
 
                                                                           <!-- CHOIX SUJET -->
                               <label for="inputState" class="ml-2">Sujet *</label>
-                                  <select id="inputState" class="form-control ml-lg-2 col-12 col-sm-12 col-md-4 col-lg-4" name="sujet"  >
+                                  <select id="inputState" class="form-control ml-lg-2 col-12 col-sm-12 col-md-4 col-lg-4" name="sujet" required>
                                       <option selected value="">-</option>
                                       <option> Mes commandes</option>
                                       <option> Question sur un produit</option>
@@ -105,14 +106,15 @@
                                   </select> <br>
                                                                     <!-- BOITE TEXTE QUESTION  -->
                                 <div class="form-group">
-                                  <label for="exampleFormControlTextarea1" class="ml-2">Votre question *</label>
-                                  <textarea class="form-control ml-lg-2 col-12 col-sm-12 col-md-6 col-lg-6" id="exampleFormControlTextarea1" name="rélamation" rows="3"  ></textarea>
+                                  <label for="reclamation" class="ml-2">Votre question *</label>
+                                  <textarea class="form-control ml-lg-2 col-12 col-sm-12 col-md-6 col-lg-6" id="reclamation" name="reclamation" rows="3"  ></textarea>
+                                  <span id="texterr"></span>
                                 </div>
                                                                   <!-- CHECKBOX AUTORISATION -->
                                 <div class="form-check ml-2 ">
                                   <input type="checkbox" class="form-check-input" id="Check1" name="autorisation"  >
                                   <label class="form-check-label" for="Check1">J'accepte le traitement informatique de ce formulaire</label>
-                                </div><br>
+                                </div><span id="checkerr"></span><br>
                                                                <!-- BOUTONS ENVOYER OU ANNULER  -->
                                 <div id="boutons">
                                   <button type="submit" class="btn ml-2 bg-dark text-light border-info">Envoyer</button>
