@@ -118,6 +118,10 @@ function checkForm(form)
         document.getElementById("checkerr").innerHTML = "Vous devez cocher cette case pour nous autoriser a traiter le formulaire.";
         bool=false;
       }
+      else
+      {
+          document.getElementById("checkerr").innerHTML = ""
+      }
     //   validation was successful
     return bool;
 
