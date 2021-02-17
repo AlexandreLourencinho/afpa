@@ -15,6 +15,7 @@ function checkForm(form)
     if(form.nom.value == "") {
         document.getElementById("nomerr").style.color = "#ff0000";
         document.getElementById("nomerr").innerHTML = "Le champ est vide!";
+        document.getElementById('nom').style.borderColor = "red";
         form.nom.focus();
         bool=false;
     }  
@@ -22,12 +23,14 @@ function checkForm(form)
     else if(!fnom.test(form.nom.value)) {
         document.getElementById("nomerr").style.color = "#ff0000";
         document.getElementById("nomerr").innerHTML = "Uniquement des lettres majuscules ou minuscules";
+        document.getElementById('nom').style.borderColor = "red";
         form.nom.focus();
         bool=false;
     }
     else
     {
         document.getElementById("nomerr").innerHTML = "";
+        document.getElementById('nom').style.borderColor = "limegreen";
     }
 
     //   check  prenom vide-----------------------------------------------------------------------------------
@@ -35,23 +38,27 @@ function checkForm(form)
         document.getElementById("prenerr").style.color = "#ff0000";
         document.getElementById("prenerr").innerHTML = "Le champ est vide!";
         form.prenom.focus();
+        document.getElementById('prenom').style.borderColor = "red";
         bool=false;
     }
 //     // check  prenom regex -----------------------------------------------------------------------------------
     else if(!fnom.test(form.prenom.value)) {
         document.getElementById("prenerr").style.color = "#ff0000";
         document.getElementById("prenerr").innerHTML = "Uniquement des lettres majuscules ou minuscules";
+        document.getElementById('prenom').style.borderColor = "red";
         form.prenom.focus();
         bool=false;
     }        
     else 
     {
+        document.getElementById('prenom').style.borderColor = "limegreen";
         document.getElementById("prenerr").innerHTML = "";
     }
     // check code postal vide ---------------------------------------------------------------------------------------
     if(form.codep.value == "") {
         document.getElementById("codeperr").style.color = "#ff0000";
         document.getElementById("codeperr").innerHTML ="le champs est vide!";
+        document.getElementById('codep').style.borderColor = "red";
             form.codep.focus();
             bool=false;
     }
@@ -59,17 +66,20 @@ function checkForm(form)
     else if(!fcodep.test(form.codep.value)) {
         document.getElementById("codeperr").style.color = "#ff0000";
         document.getElementById("codeperr").innerHTML ="entrez un code postal au format valide. exemple : 84560"
+        document.getElementById('codep').style.borderColor = "red";
         form.codep.focus();
         bool=false;
     }
     else
     {
+        document.getElementById('codep').style.borderColor = "limegreen";
         document.getElementById("codeperr").innerHTML = ""
     }
 // check ville vide-----------------------------------------------------------------------------------
     if(form.ville.value == "") {
         document.getElementById("villerr").style.color = "#ff0000";
         document.getElementById("villerr").innerHTML ="le champs est vide!"
+        document.getElementById('ville').style.borderColor = "red";
         form.ville.focus();
         bool=false;
 }
@@ -77,16 +87,19 @@ function checkForm(form)
     else if(!fville.test(form.ville.value)) {
         document.getElementById("villerr").style.color = "#ff0000";
         document.getElementById("villerr").innerHTML ="Entrez un nom de ville!"
+        document.getElementById('ville').style.borderColor = "red";
         form.ville.focus();
         bool=false;
     }
     else{
+        document.getElementById('ville').style.borderColor = "limegreen";
         document.getElementById("villerr").innerHTML = "";
     }
   // check adresse vide-----------------------------------------------------------------------------------
     if(form.adresse.value == "") {
         document.getElementById("adresserr").style.color = "#ff0000";
         document.getElementById("adresserr").innerHTML ="Le champ est vide!";
+        document.getElementById('adresse').style.borderColor = "red";
     form.adresse.focus();
     bool=false;
     }
@@ -94,33 +107,34 @@ function checkForm(form)
     else if(!fadresse.test(form.adresse.value)) {
         document.getElementById("adresserr").style.color = "#ff0000";
         document.getElementById("adresserr").innerHTML = "Entrez une adresse valide"
+        document.getElementById('adresse').style.borderColor = "red";
     form.adresse.focus();
     bool=false;
     } 
     else
     {
+        document.getElementById('adresse').style.borderColor = "limegreen";
         document.getElementById("adresserr").innerHTML = "";
     } 
     // zone de texte----------------------------------------------------------------------------------------
     if(form.reclamation.value == "") {
         document.getElementById("texterr").style.color = "#ff0000";
         document.getElementById("texterr").innerHTML ="Le champ est vide!";
+        document.getElementById('reclamation').style.borderColor = "red";
     form.reclamation.focus();
     bool=false;
     }
     else
     {
+        document.getElementById('reclamation').style.borderColor = "limegreen";
         document.getElementById("texterr").innerHTML = ""
     }
     // checkbox -----------------------------------------------------------------------------------
     if(form.Check1.checked==false) {
         document.getElementById("checkerr").style.color = "#ff0000";
         document.getElementById("checkerr").innerHTML = "Vous devez cocher cette case pour nous autoriser a traiter le formulaire.";
+        document.getElementById('Check1').style.borderColor = "red";
         bool=false;
-      }
-      else
-      {
-          document.getElementById("checkerr").innerHTML = ""
       }
     //   validation was successful
     return bool;
