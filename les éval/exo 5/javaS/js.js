@@ -1,16 +1,17 @@
 
 
 // expressions régulières -----------------------------------------------------------------------------------
-var fnom= new RegExp(/^[A-Za-zéàï -]+$/);
+var fnom= new RegExp(/^[A-Za-zéàïèøÀÉÇüÜëËÙù-]+$/);
 // var fdate = new RegExp(/^[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{2,4}$/);
 // var fmail= new RegExp(/^\S+@\S+\.\S+$/);
 var fcodep = new RegExp(/^[0-9]{5}$/);
-var fville = new RegExp(/^[a-zA-z -]+$/);
-var fadresse = new RegExp (/^[A-Za-z0-9 -]+$/);
+var fville = new RegExp(/^[A-Za-z0-9éàïèøÀÉÇüÜëËÙù -]+$/);
+var fadresse = new RegExp (/^[A-Za-z0-9éàïèøÀÉÇüÜëËÙù -]+$/);
 var name=form.nom.value
 // fonction checkform-----------------------------------------------------------------------------------
 function checkForm(form)
 {
+    // var retour false ou true
     var bool=true
     //   check nom vide-----------------------------------------------------------------------------------
     if(form.nom.value == "") {

@@ -1,25 +1,39 @@
-var nombre=prompt("entrez l'age de la personne")
-nombre=parseInt(nombre)
-var vieux=0
-var jeune=0
-var moyen=0
-while(nombre<100){
-    var nombre=prompt("entrez l'age de la personne")
-if (nombre<20 && nombre>0)
+function nbVieux()
 {
-jeune++
+    var nombre=0;
+    var vieux=0;
+    var jeune=0;
+    var moyen=0;
+        while(nombre<100 && nombre!=null && nombre!=undefined)
+        {
+            var nombre=prompt("entrez l'age de la personne");
+            if (isNaN(nombre)==true || nombre==null || nombre==undefined)
+            {
+                alert("entrez un âge!");
+                return false;
+            }
+
+            if (nombre<20 && nombre>0)
+                {
+                jeune++;
+                }
+            else if (nombre>40)
+                {
+                    vieux++;
+                }
+            else if(nombre>=20 && nombre<=40)
+                {
+                    moyen++;
+                }
+            else if (nombre<0)
+                {
+                    alert("un âge n'est jamais négatif!");
+                }
+        }
+    document.write("il y a "+jeune+" personnes de moins de 20 ans"+"<br>"+ " il y a "+moyen+" personnes de 20 a 40 ans"+"<br>"+"il y a "+vieux+" personnes de plus de 40 ans");
+    document.write("<br>"+"<br>");
 }
-else if (nombre>40)
+while(window.confirm("voulez vous lancer la fonction de classement par âge?")==true)
 {
-    vieux++
+    nbVieux();
 }
-else if(nombre>=20 && nombre<=40)
-{
-    moyen++
-}
-else if (nombre<0)
-{
-    alert("un âge n'est jamais négatif!")
-}
-}
-document.write("il y a "+jeune+" personnes de moins de 20 ans \n"+"<br>"+ " il y a "+moyen+" personnes de 20 a 40 ans"+"<br>"+"il y a "+vieux+" personnes de plus de 40 ans")

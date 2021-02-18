@@ -1,5 +1,5 @@
-var PU
-var QTECOM
+var PU=0
+var QTECOM=0
 var PAP 
 var REM
 var PORT
@@ -12,6 +12,11 @@ while(window.confirm("voulez-vous accéder a la fonction?")==true)
     QTECOM=parseInt(QTECOM)
     PU=parseInt(PU)
     TOT=PU*QTECOM
+    if (isNaN(QTECOM)==true || isNaN(PU)==true)
+    {
+        alert("vous devez entrez des nombres!")
+        continue
+    }
     if (TOT<100)
     {
         PORT=TOT*0.02
