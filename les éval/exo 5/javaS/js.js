@@ -7,6 +7,7 @@ var fnom= new RegExp(/^[A-Za-zéàï -]+$/);
 var fcodep = new RegExp(/^[0-9]{5}$/);
 var fville = new RegExp(/^[a-zA-z -]+$/);
 var fadresse = new RegExp (/^[A-Za-z0-9 -]+$/);
+var name=form.nom.value
 // fonction checkform-----------------------------------------------------------------------------------
 function checkForm(form)
 {
