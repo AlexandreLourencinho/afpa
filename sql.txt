@@ -54,3 +54,10 @@ prix_total INT NOT NULL,
 FOREIGN KEY (num_chambre),
 FOREIGN KEY (num_client)
 );
+
+
+INSERT INTO entcom(numcom, obscom, datcom, numfou)
+VALUES (70010, "", "2018-04-23 15:59:51", 120), 
+(70011, "Commande urgente", "2018-04-23 15:59:51", 540), 
+(70020, "", "2018-04-23 15:59:51", 9120), 
+(70025, "Commande urgente", "2018-04-23 15:59:51", 9150)
