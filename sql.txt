@@ -1,0 +1,56 @@
+1)
+CREATE TABLE client(
+adresse_client VARCHAR (50) NOT NULL,
+nom_client VARCHAR(50) NOT NULL,
+prenom_client VARCHAR NOT NULL,
+num_client INT NOT NULL,
+PRIMARY KEY (num_client)
+);
+
+2)
+
+CREATE TABLE station(
+num_station INT NOT NULL,
+nom_station VARCHAR NOT NULL,
+PRIMARY KEY (num_station)
+);
+
+3)
+
+CREATE TABLE HOTEL(
+capacite_hotel INT NOT NULL,
+categorie_hotel VARCHAR NOT NULL,
+nom_hotel VARCHAR NOT NULL,
+adresse_hotel VARCHAR NOT NULL,
+num_hotel INT NOT NULL,
+num_station INT NOT NULL,
+PRIMARY KEY (num_hotel),
+FOREIGN KEY(num_station)
+);
+
+4)
+
+CREATE TABLE chambre(
+capacite_chambre INT NOT NULL,
+degre_confort VARCHAR NOT NULL,
+exposition VARCHAR NOT NULL,
+type_chambre VARCHAR NOT NULL,
+num_chambre INT NOT NULL,
+num_hotel INT NOT NULL,
+PRIMARY KEY (num_chambre),
+FOREIGN KEY (num_hotel)
+);
+
+5)
+
+CREATE TABLE reservation(
+num_chambre INT NOT NULL,
+num_client INT NOT NULL,
+date_debut DATE,
+date_fin DATE,
+date_reservation DATE,
+montant_arrhes INT NOT NULL,
+prix_total INT NOT NULL,
+FOREIGN KEY (num_chambre),
+FOREIGN KEY (num_client)
+);

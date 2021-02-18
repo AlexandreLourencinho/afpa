@@ -17,3 +17,4 @@ else
     alert("vous n'avez rien rentré comme valeur.")
 }
 console.log(tablo)
+console.table(tablo)

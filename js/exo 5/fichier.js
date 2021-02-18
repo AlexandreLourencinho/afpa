@@ -4,5 +4,4 @@ while (nombre>0)
 {
     console.log(nombre-1)
     nombre -= 1
-
 }

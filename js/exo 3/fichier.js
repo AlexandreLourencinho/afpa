@@ -59,9 +59,9 @@ if (ope == "/" && nb2 == 0) {
 //      console.log("Modèle C3 : marque Citroën");
 //      break;
 // } 
-var tableau = ["Paul", "Pierre", "Anne", "Sophie"];
+// var tableau = ["Paul", "Pierre", "Anne", "Sophie"];
 
-for (var i in tableau) 
-{
-    console.log(tableau[i]);
-}
+// for (var i in tableau) 
+// {
+//     console.log(tableau[i]);
+// }

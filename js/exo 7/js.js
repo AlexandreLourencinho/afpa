@@ -8,4 +8,6 @@ for (i=1; i<=nombre1; i++)
 {
     table=i*nombre2
     console.log(i+" fois "+nombre2+" = " +table)
+    document.write(i+ " fois " + nombre2+ " = " + table +"<br> ")
 }
+console.table(table)
