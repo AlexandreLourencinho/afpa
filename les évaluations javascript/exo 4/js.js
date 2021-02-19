@@ -24,7 +24,7 @@ var PORT
 var TOT
 var rem
 // BOUCLE POUR RELANCER LA FONCTION AUTANT DE FOIS QUE VOULU
-while(window.confirm("Voulez-vous calculer le prix que vous aurez a payer en fonction du nombre et du prix de l'articles ou des articles que vous désirez acheter?")==true)
+while(window.confirm("Voulez-vous calculer le prix que vous aurez a payer en fonction du nombre et du prix de l'articles ou des articles que vous désirez acheter? Appuyez sur ok pour recommencer ou sur annuler pour afficher les détails de votre calcul précédent")==true)
 {
     // SAISIE DES QUANTITES PRIX ETC FIN C'EST PLUTOT CLAIR LA
     QTECOM = prompt("saisissez le nombre d'articles que vous voulez commander.")

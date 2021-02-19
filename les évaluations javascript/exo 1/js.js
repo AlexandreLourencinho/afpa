@@ -12,11 +12,12 @@
 
 
 // alerte consignant ce qui va être fait
-alert("nous allons classer les nombre de personne par tranche d'âge.")
+
 // début de la fonction qui sera utilisée
-var i=0;
+// var i=0;
 function nbVieux()
 {
+    alert("nous allons classer les nombre de personne par tranche d'âge.")
     // les variables aux noms éponymes qui seront utilisées
     var nombre=0;
     var vieux=0;
@@ -39,11 +40,13 @@ function nbVieux()
                 {
                 jeune++;
                 }
+                // si age supérieur a 40
             else if (nombre>40)
                 {
                     vieux++;
                 }
-            else if (nombre>=100)
+                // si age entre 20 et 40 ans
+            else if (nombre>=20 && nombre<=40)
                 {
                     moyen++;
                 }
@@ -53,13 +56,13 @@ function nbVieux()
                 }
         }
         // affichage des résultats - du classement des gens par âges
-    document.write("Série numéro "+i+"<br>"+"Il y a "+jeune+" personnes de moins de 20 ans"+"<br>"+ " il y a "+moyen+" personnes de 20 a 40 ans"+"<br>"+"il y a "+vieux+" personnes de plus de 40 ans");
-    document.write("<br>"+"<br>"+"<hr>");
+    document.getElementById("affi").innerHTML="Il y a "+jeune+" personnes de moins de 20 ans"+"<br>"+ " il y a "+moyen+" personnes de 20 a 40 ans"+"<br>"+"il y a "+vieux+" personnes de plus de 40 ans";
+    // document.getElementById("affi").innerHTML="<br>"+"<hr>"+"<br>";
 }
 // relance la fonction si l'utilisateur dit ok.
-while(window.confirm("voulez vous lancer, ou relancer, la fonction de classement par âge?")==true)
-{
-    // incrémente le  I afin d'avoir l'affichage des numéros de séries.
-    i++
-    nbVieux();
-}
+// while(window.confirm("voulez vous lancer, ou relancer, la fonction de classement par âge? Appuyez sur annuler pour afficher le ou les classements précédents.")==true)
+// {
+//     // incrémente le  I afin d'avoir l'affichage des numéros de séries.
+//     i++
+//     nbVieux();
+// }

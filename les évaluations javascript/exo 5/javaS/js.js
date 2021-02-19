@@ -149,7 +149,7 @@ function checkForm(form)
         document.getElementById('Check1').style.borderColor = "red";
         bool=false;
       }
-    //   validation was successful
+    //   validation réussie
     return bool;
 
 
