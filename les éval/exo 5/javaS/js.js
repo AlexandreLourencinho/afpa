@@ -1,4 +1,15 @@
+// Exercice 5 : vérification d'un formulaire
+// Effectuez le contrôle de saisie de votre formulaire Jarditou en Javascript.
 
+// Lorsqu'une erreur est détectée, l'utilisateur doit en être informé grâce à l'affichage d'un message sous le champ concerné.
+
+// Le formulaire ne peut être envoyé que lorsque tout est bon.
+// ++++++++++++++++++++++++++++++++++++++++
+// Laurent Briaux02/16/2021
+// Bonjour tout le monde,
+// Pour le dernier exercice, la date et l’émail vous laissez bootstrap gérer les contraintes!
+// Pour les plus avancés, vous pouvez le faire en js, un petit peu d’exercice ne fait pas de mal :innocent:
+// Bon courage
 
 // expressions régulières -----------------------------------------------------------------------------------
 var fnom= new RegExp(/^[A-Za-zéàïèøÀÉÇüÜëËÙù-]+$/);

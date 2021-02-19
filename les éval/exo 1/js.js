@@ -1,3 +1,16 @@
+// Exercice 1 - Calcul du nombre de jeunes, de moyens et de vieux
+// Il s'agit de dénombrer les personnes d'âge strictement inférieur à 20 ans, les personnes d'âge strictement supérieur à 40 ans et celles dont l'âge est compris entre 20 ans et 40 ans (20 ans et 40 ans y compris).
+
+// Le programme doit demander les âges successifs.
+
+// Le comptage est arrêté dès la saisie d'un centenaire. Le centenaire est compté.
+
+// Donnez le programme Javascript correspondant qui affiche les résultats.
+
+
+
+
+
 // alerte consignant ce qui va être fait
 alert("nous allons classer les nombre de personne par tranche d'âge.")
 // début de la fonction qui sera utilisée
