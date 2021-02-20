@@ -7,17 +7,11 @@
 
 // Donnez le programme Javascript correspondant qui affiche les résultats.
 
-
-
-
-
-// alerte consignant ce qui va être fait
-
 // début de la fonction qui sera utilisée
-// var i=0;
 function nbVieux()
 {
-    alert("nous allons classer les nombre de personne par tranche d'âge.")
+    // pop qui informe du lancement de la fonction
+    alert("nous allons classer le nombre de personnes par tranche d'âge.")
     // les variables aux noms éponymes qui seront utilisées
     var nombre=0;
     var vieux=0;

@@ -18,7 +18,9 @@ var nombre=0;
     // début de la fonction table de multiplication hein
     function tableMult()
     {
+        // vide l'affichage de la précédente table de multiplication
         document.getElementById("affi").innerHTML = " "
+        // déclaration des variables - demande le nombre qui sera affiché en table de multiplication
         var nombre = prompt(" entrez un nombre pour en afficher la table de multiplication");
         var i;
         var table;

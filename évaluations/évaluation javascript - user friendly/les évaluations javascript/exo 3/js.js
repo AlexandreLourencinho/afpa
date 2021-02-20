@@ -34,3 +34,6 @@ while (window.confirm("Voulez-vous trouver un prénom de la liste? appuyez sur a
     document.getElementById("affi").innerHTML = "Voici les prénoms restants de la liste :" +"<br>"+tab+"<br>";
 }
 }
+// NOTE : l'affichage s'actualise au fur et a mesure des prénoms
+// rentrés sans faire "annuler" sur firefox, mais pas sur Opéra  et sur Chrome. Probablement
+// une subtilité de ces navigateurs à prendre en compte sur le script dont je n'ai pas connaissance.

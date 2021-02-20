@@ -24,15 +24,14 @@ var REM
 var PORT
 var TOT
 var rem
-// BOUCLE POUR RELANCER LA FONCTION AUTANT DE FOIS QUE VOULU
-// while(window.confirm("Voulez-vous calculer le prix que vous aurez a payer en fonction du nombre et du prix de l'articles ou des articles que vous désirez acheter? Appuyez sur ok pour recommencer ou sur annuler pour afficher les détails de Votre calcul précédent")==true)
-// {
-    // SAISIE DES QUANTITES PRIX ETC FIN C'EST PLUTOT CLAIR LA
+//
+    // SAISIE DES QUANTITES PRIX ETC
     QTECOM = document.getElementById("article").value
     PU = document.getElementById("Prix").value
-
+    // conversion varchar en nombre
     QTECOM=parseInt(QTECOM)
     PU=parseInt(PU)
+    // calcul du total
     TOT=PU*QTECOM
     // SI QTECOM OU PU NE SONT PAS DES NOMBRES CA DIT QUE C'EST PAS DES NOMBRES
     if (isNaN(QTECOM)==true || isNaN(PU)==true)
@@ -111,4 +110,3 @@ var rem
     }
 
 }
-// }
