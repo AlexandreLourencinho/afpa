@@ -4,9 +4,77 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Exercice 4</title>
 </head>
-<body>
+<body class="bg-secondary">
+<header class="d-flex col-12 justify-content-center align-items-center row">
+    <h2 class="text-info mr-3 col-2">Evaluation de fin de <br> parcours front-end</h2>
+    <a href="../acceuil eval- accédez aux exercices depuis ici !.html"><img class="col-8" src="../img/js002.png" alt="logo js" title="logo js"></a>
+    <h2 class="text-info ml-3 col-2">Lourencinho Alexandre</h2>
+</header>
+<div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-light bg-info">
+    <a class="navbar-brand text-dark" href="../acceuil eval- accédez aux exercices depuis ici !.html">Acceuil des évaluations</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#"> <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Liste des exercices
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="../exo 1/index.html">Exercice 1 : Calcul du nombre de jeunes, de moyens et de vieux</a>
+            <a class="dropdown-item" href="../exo 2/index.html"">Exercice 2 :Table de multiplication</a>
+            <a class="dropdown-item" href="../exo 3/index.html"">Exercice 3 : recherche d'un prénom</a>
+            <a class="dropdown-item" href="../exo 4/index.html"">Exercice 4 : total d'une commande</a>
+            <a class="dropdown-item" href="../exo 5/contact.html"">Exercice 5 : vérification d'un formulaire</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <h1 class="text-danger">Exercice 4 : total d'une commande</h1><hr>
+  <p class="text-light">A partir de la saisie du prix unitaire noté PU d'un produit et de la quantité commandée QTECOM, afficher le prix
+     à payer PAP, <br> en détaillant la remise REM et le port PORT, sachant que :
+                
+    TOT = ( PU * QTECOM ) <br>
+    la remise est de 5% si TOT est compris entre 100 et 200 € et de 10% au-delà <br>
+    le port est gratuit si le prix des produits ( le total remisé ) est supérieur à 500 €. Dans le cas contraire, le port est de 2% <br>
+    la valeur minimale du port à payer est de 6 € <br>
+    Testez tous les cas possibles afin de vous assurez que votre script fonctionne. <br>
+    
+    Ci-dessous, un jeu de tests : <br>
+    
+    Saisir 600 € et quantité = 1 : remise 10% (-60 €) soit 540,00 et frais port = 0; à payer : 540 € <br>
+    Saisir 501 € et quantité = 1 : remise 10% (-50,1 €) soit 450,90 et frais port 2% (de 450,90 €) soit +9,01 € ; à payer : 450,90+9.01 = 459,91 €. <br>
+    Saisir 100 € et quantité = 2 : 200 € donc remise 5% soit 190 € et frais de port 2% soit 3,8 € mini 6 €; à payer : 190+6 = 196 € <br>
+    Saisir 3 € et quantité = 1 : remise 0, frais de port 2% soit 0.06 € donc le minimum de 6 € s'applique; à payer : 3+6 = 9 € <br></p>
+  <div class="d-flex row">
+
+  <form class="col-12 col-md-6">
+    <div class="form-group">
+      <label for="Prix">Prix de l'article</label>
+      <input type="text" class="form-control" id="Prix" placeholder="Entrez le prix unitaire de l'article voulu">
+    </div><br>
+    <div class="form-group">
+      <label for="article">Nombre d'articles</label>
+      <input type="text" class="form-control" id="article" placeholder="Entrez le nombre d'article que vous désirez acheter">
+    </div><br>
+    <button type="button" class="btn btn-light"  onclick="return qteCom()">afficher le résultat</button>
+    <button type="reset" class="btn ml-2 bg-dark text-light border-info">Annuler</button>
+  </form>
+  <span id="affi" class="col-12 col-md-6 h5 text-warning"></span>
+  </div>
     <script src="../exo 4/js.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>

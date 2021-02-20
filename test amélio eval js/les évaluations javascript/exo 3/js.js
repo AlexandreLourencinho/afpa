@@ -8,13 +8,14 @@
 
 
 // LE TABLEAU DES PRENOMS
+function tableau(){
+    // L'AFFICHAGE DU TABLEAU DES PRENOMS EST DANS LE HTML. SINONT : DANS UNE ALERT AU BESOIN
 var tab = ["Audrey", "Aurélien", "Flavien", "Jérémy", "Laurent", "Melik", "Nouara", "Salem", "Samuel", "Stéphane"];
-// L'AFFICHAGE DU TABLEAU DES PRENOMS
+// alert (tab) 
+while (window.confirm("Voulez-vous trouver un prénom de la liste? appuyez sur annuler pour arrêter.")==true){
 // LA BOUCLE POUR TROUVER UN PRENOM
-while(window.confirm("Rentrez, ou rerentrez, un prénom de la liste pour le supprimer."+"\n En voici la liste: "+tab+"\n Appuyez sur annuler pour arrêter de supprimer des prénoms de la liste.")==true)
-{
     // LE PROMPT DEMANDE LE PRENOM
-    var prenom=prompt("entrez un prénom :")
+    var prenom=prompt("entrez un prénom de la liste :")
     // SI LE PRENOM EST DANS LE TABLEAU, RECUPERE SON INDEX, ET LE VIRE POUR LE REMPLACER PAR UN " " 
     if (tab.includes(prenom, [0]))
     {
@@ -27,8 +28,9 @@ while(window.confirm("Rentrez, ou rerentrez, un prénom de la liste pour le supp
     }
     // SI LE PRENOM N'EST PAS DANS LE TABLEAU
     else{
-        alert("le prénom n'est pas dans le tableau!")
+        alert("Ce n'est pas dans la liste !")
     }
+    // afiche ce qu'il reste de prénoms de la liste initiale.
+    document.getElementById("affi").innerHTML = "Voici les prénoms restants de la liste :" +"<br>"+tab+"<br>";
 }
-// afiche ce qu'il reste de prénoms de la liste initiale.
-document.write("Voici les prénoms restants de la liste : "+tab+"<br>");
+}

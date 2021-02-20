@@ -13,12 +13,13 @@
 //  declaration variable qui sera utilisée ensuite non nulle
 var nombre=0;
 //début de la boucle -- table de multiplication
-while(window.confirm("appuyer sur ok si vous voulez utiliser la fonction table de multiplication")==true)
-{
+// while(window.confirm("appuyer sur ok si vous voulez utiliser la fonction table de multiplication")==true)
+// {
     // début de la fonction table de multiplication hein
-    function tableMult(nombre)
+    function tableMult()
     {
-        nombre = prompt(" entrez un nombre pour en afficher la table de multiplication");
+        document.getElementById("affi").innerHTML = " "
+        var nombre = prompt(" entrez un nombre pour en afficher la table de multiplication");
         var i;
         var table;
         nombre = parseInt(nombre);
@@ -32,10 +33,6 @@ while(window.confirm("appuyer sur ok si vous voulez utiliser la fonction table d
         for (i=1; i<=10; i++)
         {
                 table=i*nombre;
-                document.write(i+" fois "+nombre+" = " +table+"<br>");
+                document.getElementById("affi").innerHTML += i+" fois "+nombre+" = " +table+"<br>";
         }
-        document.write("<br>")
     }
-    // RAPPEL DE LA FONCTION SI L'UTILISATEUR VEUT RENTRER UN AUTRE NOMBRE ET AVOIR UNE AUTRE TABLE VIA LA BOUCLE WHILE DU DEBUT..............
-    tableMult(nombre)
-}
