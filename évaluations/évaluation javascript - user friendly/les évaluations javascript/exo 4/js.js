@@ -102,10 +102,18 @@ var rem
         else
         {
             PORT=PAP*0.02
-	        PORT=PORT.toFixed(2)
-            PAP=PAP*1.02
-	        PAP=PAP.toFixed(2)
-            document.getElementById("affi").innerHTML = "Vos frais de ports s'élèvent à : "+PORT +"€ ."+"<br>"+"Votre remise est de "+REM+" soit "+rem+"€ ."+"<br>"+"Vous aurez à payer : "+PAP+"€ ."+"<br>"
+            if (PORT<6)
+                {
+                PORT=6
+	            PAP=PAP+6
+                document.getElementById("affi").innerHTML = "Vos frais de ports s'élèvent à : "+PORT +"€ ."+"<br>"+"Votre remise est de "+REM+" soit "+rem+"€ ."+"<br>"+"Vous aurez à payer : "+PAP+"€ ."+"<br>"
+                }
+            else{
+                PORT=PORT.toFixed(2)
+                PAP=PAP*1.02
+                PAP=PAP.toFixed(2)
+                document.getElementById("affi").innerHTML = "Vos frais de ports s'élèvent à : "+PORT +"€ ."+"<br>"+"Votre remise est de "+REM+" soit "+rem+"€ ."+"<br>"+"Vous aurez à payer : "+PAP+"€ ."+"<br>"
+                }
         }
     }
 
