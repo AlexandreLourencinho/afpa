@@ -46,10 +46,19 @@
       <br>  ( exemple : ["Audrey", "Aurélien", "Flavien", "Jérémy", "Laurent", "Melik", "Nouara", "Salem", "Samuel", " "]; )
 </p>
 <h4 class="text-warning">La liste des prénoms est donc icelle : <br> ["Audrey", "Aurélien", "Flavien", "Jérémy", "Laurent", "Melik", "Nouara", "Salem", "Samuel", "Stéphane"]</h4>
-<div class="d-flex justify-content-center">
-  <button type="button" class="col-6 btn btn-primary btn-lg btn-block" onclick="return tableau()">Lancez la "recherche" de prénoms.</button>
+<div class="d-flex">
+<form class="form-inline">
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="prenomsup" class="sr-only">Prénom</label>
+    <input type="text" class="form-control" id="prenomsup" placeholder="Entrez un prénom">
+  </div>
+  <button type="button" class="btn btn-light mb-2" onclick="return tableau()" id="bouton">Supprimer un prénom</button>
+  <button type="button" class="btn btn-dark ml-2 mb-2" onclick="return reload()" id="bouton">réinitialiser la liste</button>
+</form>
+  <span id="prenomr" class="text-success ml-3"></span>
 </div>
-  <span id="affi" class="h3 d-flex text-light justify-content-center"></span><br><br><br>
+  <span id="affi" class="h3 d-flex text-light justify-content-center"></span>
+  <span id="erreur" class="h5 text-danger"></span><br><br><br>
     <script src="../exo 3/js.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
