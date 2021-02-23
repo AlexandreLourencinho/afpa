@@ -9,6 +9,7 @@ commandes ont été passées.
 
 
 SELECT DISTINCT numfou FROM entcom
+SELECT DISTINCT numfou FROM vente
 
 
 
