@@ -1,6 +1,6 @@
 /*1)Quelles sont les commandes du fournisseur 09120?------------------------------------------------------------------------------*/
 
-SELECT  numcom, numfou 
+SELECT  numcom as "numéro de commande", numfou as "numéro de fournisseur"
 FROM    entcom 
 WHERE   numfou=9120
 
@@ -14,7 +14,7 @@ SELECT DISTINCT numfou
 FROM            entcom
 /* avec consignes en + : ET LEURS NOMS*/
 
-SELECT DISTINCT entcom.numfou, nomfou
+SELECT DISTINCT entcom.numfou as "numéro fournisseur", nomfou as "nom fournisseur"
 
 from            entcom 
 join            fournis 
@@ -37,14 +37,19 @@ from    entcom
 inférieur à 1000 (informations à fournir : 
 n° produit(codart), libelléproduit(libart), stock(stkphy), 
 stockactuel d'alerte (stkale), 
-quantitéannuelle(qteann))*/
+quantitéannuelle(qteann))-------------------------------------------------------------------------------------------------------*/
 
 
-SELECT codart as "numero_article", libart as "libelle_article", stkphy as "stock_physique", stkale as "stock_d_alerte", qteann as "quantite_annuelle"
+SELECT      codart as "numero article", 
+            libart as "libelle article", 
+            stkphy as "stock physique", 
+            stkale as "stock d'alerte",    
+            qteann as "quantite annuelle"
 
-from produit
+from        produit
 
-where stkphy<=stkale AND qteann<1000
+where       stkphy<=stkale 
+AND         qteann<1000
 
 
 
@@ -53,9 +58,9 @@ where stkphy<=stkale AND qteann<1000
  départements 75 78 92 77 ? 
 L’affichage (département, nom fournisseur) 
 sera effectué par département décroissant, 
-puis par ordre alphabétique*/
+puis par ordre alphabétique------------------------------------------------------------------------------------------------------*/
 
-SELECT      left(posfou,2), nomfou 
+SELECT      left(posfou,2) as "département", nomfou as "nom fournisseur"
 
 from        fournis
 
@@ -67,7 +72,7 @@ or          posfou like "77%"
 ORDER BY    posfou DESC, nomfou ASC
 
 
-/*6)Quelles sont les commandes passées au mois de mars et avril?*/
+/*6)Quelles sont les commandes passées au mois de mars et avril?------------------------------------------------------------------*/
 
 
 
@@ -80,11 +85,11 @@ where   month(datcom) between 03 and 04
 
 
 /*7)Quelles sont les commandes du jour qui ont des observations 
-particulières ?(Affichage numéro de commande, date de commande)*/
+particulières ?(Affichage numéro de commande, date de commande)--------------------------------------------------------------------*/
 
 
 
-SELECT  numcom, datcom 
+SELECT  numcom as "numéro de commande", datcom as "date de commande"
 
 from    entcom 
 
@@ -95,28 +100,28 @@ AND     obscom <> ""
 
 
 /*8)Lister le total de chaque commande par total décroissant 
-(Affichage numéro de commande et total)*/
+(Affichage numéro de commande et total)----------------------------------------------------------------------------------------------*/
 
 
-SELECT      nomfou, ligcom.numcom, SUM(QTECDE * PRIUNI) as TOTAL
+SELECT      nomfou as "nom fournisseur", ligcom.numcom, SUM(QTECDE * PRIUNI) as "Total des commandes"
 
 from        ligcom
 join        entcom on ligcom.numcom = entcom.numcom
 join        fournis on entcom.numfou = fournis.numfou
 
-GROUP BY    numcom
-order BY    TOTAL desc
+GROUP BY    ligcom.numcom
+order BY    SUM(QTECDE * PRIUNI) desc
 
 
 
 /*9)Lister les commandes dont le total est supérieur à 10000€; 
 on exclura dans le calcul du total les articles commandés en 
 quantité supérieure ou égale à 1000.(Affichage numéro de 
-commande et total)*/
+commande et total)---------------------------------------------------------------------------------------------------------------------*/
 
 
 
-SELECT      nomfou, ligcom.numcom, SUM(QTECDE * PRIUNI) as TOTAL
+SELECT      nomfou as "nom fournisseur", ligcom.numcom as "numéro de commande", SUM(QTECDE * PRIUNI) as "TOTAL"
 
 from        ligcom
 
@@ -125,9 +130,9 @@ join        fournis on entcom.numfou = fournis.numfou
 
 where       qtecde<1000  
 
-GROUP BY    numcom
+GROUP BY    ligcom.numcom
 
-HAVING      SUM(QTECDE  * PRIUNI)>10000
+HAVING      TOTAL>10000
 
 order BY    TOTAL DESC
 
@@ -136,16 +141,17 @@ order BY    TOTAL DESC
 
 /*10)Lister les commandes par nom fournisseur 
 (Afficher le nom du fournisseur, 
-le numéro de commande et la date)*/
+le numéro de commande et la date)--------------------------------------------------------------------------------------------------------*/
 
 
-SELECT      entcom.numcom, datcom, nomfou
+SELECT      nomfou as "nom fournisseur", entcom.numcom as "numéro de commande", datcom as "date de commande"
 
 from        entcom
 
 join        fournis on entcom.numfou = fournis.numfou
 
-group by    nomfou
+group by    numcom
+order by 	nomfou
 
 
 
@@ -153,13 +159,15 @@ group by    nomfou
 /*11)Sortir les produits des commandes ayant le mot "urgent" 
 en observation?(Afficher le numéro de commande, 
 le nom du fournisseur, le libellé du produit et le sous 
-total= quantité commandée * Prix unitaire)*/
+total= quantité commandée * Prix unitaire)------------------------------------------------------------------------------------------------*/
 
 
 
 
 
-SELECT      sum(qtecde*priuni) as "sous-total", produit.codart, nomfou, libart, ligcom.numcom
+SELECT      nomfou as "nom fournisseur", 
+            libart as "libellé article", ligcom.codart as "code article", 
+            ligcom.numcom as "numéro commande", sum(qtecde*priuni) as "sous-total"
 
 from        ligcom
 
@@ -168,49 +176,49 @@ join        fournis on entcom.numfou = fournis.numfou
 join        produit on ligcom.codart = produit.codart
 
 where       obscom like "%urgent%"
+group by 	ligcom.numcom, nomfou, libart
 
-group by    produit.codart
 
 
 
 /*12)Coder de 2manières différentes la requête suivante:
 Lister le nom des fournisseurs susceptibles de livrer au moins 
-un article*/
+un article----------------------------------------------------------------------------------------------------------------------------------*/
 
 
-SELECT DISTINCT     nomfou
+SELECT DISTINCT     nomfou as "nom fournisseur"
 
 from                fournis
 
 join                entcom on fournis.numfou = entcom.numfou
 join                ligcom on entcom.numcom = ligcom.numcom
 
-where               qtecde-qteliv>0
+where               qteliv < qtecde
 /* deuxième manière*/
-SELECT DISTINCT     nomfou
+SELECT DISTINCT     nomfou as "nom fournisseur"
 
 from                fournis,entcom,ligcom
 
 where               fournis.numfou=entcom.numfou 
 and                 entcom.numcom=ligcom.numcom 
-and                 qtecde-qteliv>0
+and                 qteliv < qtecde
 
 
 /*13)Coder de 2 manières différentes la requête suivante
 Lister les commandes (Numéro et date) dont le fournisseur est
- celui de la commande 70210*/
+ celui de la commande 70210--------------------------------------------------------------------------------------------------------------------*/
 
 
-select      numcom, datcom, numfou 
+select      numcom as "numéro de commande", datcom as "date de commande"
 from        entcom 
 where       numfou = (
                         select          numfou 
                         from            entcom 
                         where           numcom = 70210
 )
-/*deuxième manière */
+/*deuxième manière ------------------------------------------------------------------------------------------------------------------------------*/
 
-select      numcom, datcom, numfou
+select      numcom as "numéro de commande", datcom as "date de commande"
 from        entcom
 join        fournis on entcom.numfou = fournis.numfou
 where       entcom.numfou = (
@@ -223,7 +231,7 @@ where       entcom.numfou = (
 /*14)Dans les articles susceptibles d’être vendus, 
 lister les articles moins chers (basés sur Prix1) que le moins 
 cher des rubans (article dont le premier caractère commence par R). 
-On affichera le libellé de l’article et prix1.*/
+On affichera le libellé de l’article et prix1.------------------------------------------------------------------------------------------------------*/
 
 
 
@@ -236,6 +244,7 @@ and         vente.prix1 <
                                 from        vente
                                 where       vente.codart like "R%"
                             )
+group by    codart
 
 
 
@@ -243,11 +252,14 @@ and         vente.prix1 <
 
 /*15)Editer la liste des fournisseurs susceptibles de livrer 
 les produits dont le stock est inférieur ou égal à 150 % du stock 
-d'alerte'. La liste est triée par produit puis fournisseur*/
+d'alerte'. La liste est triée par produit puis fournisseur ------------------------------------------------------------------------------------------*/
 
 
 
-SELECT      vente.codart, fournis.nomfou, vente.numfou
+SELECT      fournis.nomfou as "nom fournisseur", 
+            vente.numfou as "numéro fournisseur", 
+            produit.libart as "libellé article", 
+            vente.codart as "code article"
 
 FROM        fournis, produit, vente
 
@@ -255,9 +267,9 @@ where 	    fournis.numfou = vente.numfou
 and 	    produit.codart = vente.codart
 and	        produit.stkphy<=1.5*produit.stkale
 
-group by    nomfou
+group by    vente.codart, nomfou
 
-order by    codart, nomfou
+order by    vente.codart, nomfou
 
 
 
@@ -265,11 +277,14 @@ order by    codart, nomfou
 de livrer les produit dont le stock est inférieur ou 
 égal à 150 % du stock d'alerte et un délai de livraison 
 d'au plus 30 jours. La liste est triée par 
-fournisseur puis produit*/
+fournisseur puis produit -----------------------------------------------------------------------------------------------------------------------------*/
 
 
 
-SELECT      vente.codart, fournis.nomfou, vente.numfou
+SELECT      fournis.nomfou as "nom fournisseur", 
+            vente.numfou as "numéro fournisseur", 
+            produit.libart as "libellé article", 
+            vente.codart as "code article"
 
 FROM        fournis, produit, vente
 
@@ -278,38 +293,39 @@ and 	    produit.codart = vente.codart
 and	        produit.stkphy<=1.5*produit.stkale
 and 	    delliv<=30
 
-Group by    nomfou
+group by    vente.codart, nomfou
 
-order by    codart, nomfou
+order by    vente.codart, nomfou
 
 
 
 
 /*17)Avec le même type de sélection que ci-dessus, 
 sortir un total des stocks par fournisseur trié 
-par total décroissant*/
+par total décroissant------------------------------------------------------------------------------------------------------------------------------------*/
 
 
 
-select      count(vente.stkphy), fournis.nomfou, fournis.numfou
+select      sum(produit.stkphy) as stock, fournis.nomfou as "nom fournisseur", fournis.numfou as "numéro fournisseur"
 
 from        vente, fournis, produit
 
-where       fournis.numfou = vente.numfou
-
-order by    nomfou DESC
+where       produit.codart=vente.codart
+AND			vente.numfou = fournis.numfou
 
 group by    nomfou
- 
+
+order by    stock DESC
 
 
 
 /*18)En fin d'année, sortir la liste des produits 
 dont la quantité réellement commandée dépasse 90% de la 
-quantité annuelle prévue.*/
+quantité annuelle prévue.------------------------------------------------------------------------------------------------------------------------------------*/
 
 
-SELECT      ligcom.codart as "produits dont la quantité réellement commandée dépasse 90% de la quantité annuelle prévue"
+SELECT      ligcom.codart as "produits avec quantitécommandée >90% de la quantité annuelle", 
+            produit.libart as "libellé de l'article"
 
 from        ligcom, produit
 
@@ -321,10 +337,10 @@ group by    ligcom.codart
 
 /*19)Calculer le chiffre d'affaire par fournisseur pour l'année 2018 
 sachant que les prix indiqués sont hors taxes et que le taux de 
-TVA est 20%.*/
+TVA est 20%.-----------------------------------------------------------------------------------------------------------------------------------------------*/
 
 
-select      sum(qtecde*priuni*1.2) as total, nomfou
+select      sum(qtecde*priuni*1.2) as total, nomfou as "nom fournisseur"
 
 from        ligcom, fournis, entcom
 
@@ -333,14 +349,15 @@ and         entcom.numfou = fournis.numfou
 and         year(datcom) = 2018
 
 group by    nomfou
+order by 	total desc
 
 
 
 
-/*LES BESOINS DE MISE A JOUR------------------------------------------------*/
+/*LES BESOINS DE MISE A JOUR--------------------------------------------------------------------------------------------------------------------------------*/
 
 /*20)//1)Application d'une augmentation de tarif de 4% 
-pour le prix 1, 2% pour le prix2 pour le fournisseur 9180*/
+pour le prix 1, 2% pour le prix2 pour le fournisseur 9180---------------------------------------------------------------------------------------------------*/
 
 
 
@@ -355,7 +372,7 @@ where   numfou=9180
 
 /*21)//2)Dans la table vente, mettre à jour le prix2 
 des articles dont le prix2 est null, 
-en affectant a valeur de prix.*/
+en affectant a valeur de prix.-----------------------------------------------------------------------------------------------------------------------------*/
 
 
 update      vente
@@ -369,7 +386,7 @@ where       prix2=0
 
 /*22)//3)Mettre à jour le champ obscom en positionnant 
 '*****' pour toutes les commandes dont le fournisseur 
-a un indice de satisfaction <5*/
+a un indice de satisfaction <5-----------------------------------------------------------------------------------------------------------------------------*/
 
 
 
@@ -386,7 +403,7 @@ and         fournis.satisf<5
 
 
 
-/*23)//4)Suppression du produit I110*/
+/*23)//4)Suppression du produit I110-----------------------------------------------------------------------------------------------------------------------*/
 
 /*première*/
 delete from     produit
