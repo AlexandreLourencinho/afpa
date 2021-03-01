@@ -7,7 +7,7 @@ SELECT  companyName  AS Société,
 
 FROM    customers
 
-WHERE   Country LIKE 'Fr%'
+WHERE   Country = 'France'
 
 
 /*2 - Produits vendus par le fournisseur « Exotic Liquids » :------------------------------------------------------------*/
@@ -19,7 +19,7 @@ FROM    products, suppliers
 
 WHERE   products.SupplierID = suppliers.SupplierID 
 
-AND     CompanyName LIKE 'Exo%' 
+AND     CompanyName = 'Exotic Liquids' 
 
 /*3 - Nombre de produits vendus par les fournisseurs Français dans l’ordre décroissant:-------------------------------- */
 SELECT      CompanyName      AS Fournisseur,
@@ -28,7 +28,7 @@ SELECT      CompanyName      AS Fournisseur,
 FROM        suppliers, products
 
 WHERE       products.SupplierId = suppliers.SupplierId 
-AND         suppliers.country LIKE 'Fr%' 
+AND         suppliers.country = 'France'
 
 GROUP BY    Fournisseur
 
@@ -43,7 +43,7 @@ FROM        customers, orders, orderdetails
 
 WHERE       customers.CustomerID = orders.CustomerID 
 AND         orders.orderID = orderdetails.OrderID 
-AND         customers.country LIKE 'Fr%' 
+AND         customers.country = 'France'
 
 GROUP BY    Client
 
@@ -76,7 +76,7 @@ WHERE   customers.customerID = orders.customerID
 AND     orders.orderID = orderdetails.orderId 
 AND     orderdetails.productID = products.productID 
 AND     products.SupplierID = suppliers.SupplierID 
-AND     suppliers.CompanyName LIKE 'Exo%' 
+AND     suppliers.CompanyName = 'Exotic Liquids' 
 
 GROUP BY  Pays
 
@@ -110,7 +110,7 @@ FROM    orders, customers
 
 WHERE   orders.CustomerID = customers.CustomerID 
 
-AND     CompanyName LIKE 'Du%' 
+AND     CompanyName = 'Du monde entier'
 
 
 /*10 – Quel est le délai moyen de livraison en jours ?---------------------------------------------------------------------*/
