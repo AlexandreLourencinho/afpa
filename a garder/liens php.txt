@@ -1,0 +1,3 @@
+https://www.php.net/manual/fr/ref.array.php
+
+https://gist.github.com/plasticbrain/3887245
