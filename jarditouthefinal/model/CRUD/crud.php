@@ -11,11 +11,11 @@ class crud
                 $this->db = $conn;
         }
         // fonction pour rentrer un truc dans la base jarditou - public , utilisée par tout le monde
-        public function ajoutProduit($pro_cat_id, $pro_ref, $pro_libelle, $pro_description, $pro_prix, $pro_stock, 
+        public function create($pro_cat_id, $pro_ref, $pro_libelle, $pro_description, $pro_prix, $pro_stock, 
                                      $pro_couleur, $extension, $pro_d_ajout, $pro_photo, $pro_bloque)
         {
-                try 
-                {
+            try 
+            {
                        // si image choisie                     
                     if(isset($_POST['illu']))
                         {
@@ -71,7 +71,7 @@ class crud
                                         {
                                             echo "Suite à une erreur, le fichier n'a pas été uploadé";
                                         }
-                                    }
+                                }
                             // Condition si le produit n'est pas bloqué alors cela affiche 0 ou NULL dans le tableau phpMyAdmin
                             if ($_POST['bloque']==0) 
                                 {
@@ -84,7 +84,7 @@ class crud
                                 }
                             $stmt->bindparam(':pro_photo', $extension);
                             $stmt->bindparam(':pro_bloque', $bloque);
-                            }
+                            
                             // executer la commande sql
                             $stmt->execute();
                             if($stmt)
@@ -131,7 +131,6 @@ class crud
                                 }
                             $stmt->bindparam(':pro_photo', $extension);
                             $stmt->bindparam(':pro_bloque', $bloque);
-                            }
                             // executer la commande sql
                             $stmt->execute();
                             if($stmt)
@@ -146,25 +145,24 @@ class crud
                                     $message = "Echec de l'insertion";
                                 }
                             
-                        }
-                } 
+                        } 
+                    }
                 // si erreur => display l'erreur
-                catch (Exception $e) 
+            catch (Exception $e) 
                 {
-                        // $e obtient le message d'erreur et l' "echo" 
-                        echo $e->getMessage();
-                        // retour : pas d'insertion
-                        return false;
+                            // $e obtient le message d'erreur et l' "echo" 
+                            echo $e->getMessage();
+                            // retour : pas d'insertion
+                            return false;
                 }
-            }
-        }
+    }
 
 
 
 
 
                 // fonction -publique ici aussi - pour éditer une station
-                public function modifProduit($pro_cat_id, $pro_ref, $pro_libelle, $pro_description, $pro_prix, $pro_stock, 
+                public function update($pro_cat_id, $pro_ref, $pro_libelle, $pro_description, $pro_prix, $pro_stock, 
                 $pro_couleur, $extension, $pro_d_ajout, $pro_photo, $pro_bloque)
                 {
                         try {
@@ -241,6 +239,7 @@ class crud
                                     $stmt->execute();
                                     // retour : requete ok
                                     return true;
+                                }
                             else
                                 {
                                     date_default_timezone_set('Europe/Paris'); // Toujours le datetime avant la variable $date
@@ -289,7 +288,6 @@ class crud
                                             $message = "Echec de l'insertion";
                                         }
                                 }
-                        }
                         // si erreur
                         catch (Exception $e) 
                         {
@@ -300,10 +298,10 @@ class crud
                         }
                 }
                 // fonction publique pour voir les détails d'une station
-        public function detailPorduit($id)
+        public function read($id)
         {
                 // preparation de la requête sql + identification table
-                $sql = "SELECT * FROM produits WHERE pro_id = :id";
+                $sql = "SELECT * FROM produits, categories WHERE pro_id = :id and pro_cat_id = cat_id";
                 // appel de la fonction de préparation de la requete sql
                 $stmt = $this->db->prepare($sql);
                 // retourner le placeholder :id dans le $id
@@ -316,9 +314,9 @@ class crud
                 return $resultat;
         }
         // fonction qui appelle l'affichage de toutes les infos de toutes les stations
-        public function getProduits()
+        public function readd()
         {
-                $sql = "SELECT * FROM `produits`";
+                $sql = "SELECT * FROM produits, categories where pro_cat_id = cat_id";
                 // pas bien sur de comment le $this et le -> marche. ou même pourquoi 
                 // le db marche sans le $ 
                 // et quid du query ici ?-- se renseigner
@@ -326,11 +324,11 @@ class crud
                 // retourne le resultat définit juste au dessus
                 return $resultat;
         }
-        public function supprimerProduit($id)
+        public function delete($id)
         {
                 try {
                 
-                $sql = " DELETE FROM produits where pro_id = :id";
+                $sql = "DELETE FROM produits where pro_id = :id";
                 $stmt = $this->db->prepare($sql);
                 $stmt->bindparam(':id', $id);
                 $stmt->execute();

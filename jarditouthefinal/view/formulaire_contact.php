@@ -47,38 +47,38 @@ include "../view/includes/header.php"; ?>
                             <input class="form-control ml-lg-2 col-12" type="text" placeholder="votre email" id="mail" name="mail"  >
                             <span id="emailerr"></span>
                             <br>
-                    <h2 class="ml-2" id="vdemande"><u>Votre demande</u></h2><br>
+                        <h2 class="ml-2" id="vdemande"><u>Votre demande</u></h2><br>
 
 
-                                                    <!-- CHOIX SUJET -->
-                                <label for="inputState" class="ml-2">Sujet *</label>
-                                    <select id="inputState" class="form-control ml-lg-2 col-12" name="sujet"   >
-                                        <option selected value="">-</option>
-                                        <option> Mes commandes</option>
-                                        <option> Question sur un produit</option>
-                                        <option> Réclamation</option>
-                                        <option> Autre </option>
-                                    </select> <br>
-                                                    <!-- BOITE TEXTE QUESTION  -->
-                                    <div class="form-group">
-                                    <label for="reclamation" class="ml-2">Votre question *</label>
+                    <!-- CHOIX SUJET -->
+                            <label for="inputState" class="ml-2">Sujet *</label>
+                                <select id="inputState" class="form-control ml-lg-2 col-12" name="sujet"   >
+                                    <option selected value="">-</option>
+                                    <option> Mes commandes</option>
+                                    <option> Question sur un produit</option>
+                                    <option> Réclamation</option>
+                                    <option> Autre </option>
+                                </select> <br>
+                    <!-- BOITE TEXTE QUESTION  -->
+                            <div class="form-group">
+                                <label for="reclamation" class="ml-2">Votre question *</label>
                                     <textarea class="form-control ml-lg-2 col-12" id="reclamation" name="reclamation" rows="3" 
                                     placeholder ='Faites nous part de votre demande ou de votre problème!' ></textarea>
                                     <span id="texterr" class="ml-3"></span>
-                                    </div>
-                                                    <!-- CHECKBOX AUTORISATION -->
-                                    <div class="form-check ml-2 ">
-                                    <input type="checkbox" class="form-check-input" id="Check1" name="autorisation"  >
+                            </div>
+                    <!-- CHECKBOX AUTORISATION -->
+                            <div class="form-check ml-2 ">
+                                <input type="checkbox" class="form-check-input" id="Check1" name="autorisation"  >
                                     <label class="form-check-label" for="Check1">J'accepte le traitement informatique de ce formulaire</label>
-                                    </div><span id="checkerr" class="ml-3"></span><br>
-                                                <!-- BOUTONS ENVOYER OU ANNULER  -->
-                                    <div id="boutons">
-                                    <button type="submit" class="btn ml-2 btn-primary text-light border-info">Envoyer</button>
-                                    <button type="reset" class="btn ml-2 bg-dark text-light border-info">Annuler</button>
-                                    </div>
-                <br>
-            </form>
-          </div>
+                            </div><span id="checkerr" class="ml-3"></span><br>
+                    <!-- BOUTONS ENVOYER OU ANNULER  -->
+                            <div id="boutons">
+                                <button type="submit" class="btn ml-2 btn-primary text-light border-info">Envoyer</button>
+                                <button type="reset" class="btn ml-2 bg-dark text-light border-info">Annuler</button>
+                            </div>
+                            <br>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -86,8 +86,5 @@ include "../view/includes/header.php"; ?>
               
   </div>
   <script src="../assets/javascript/script_formulaire.js"></script>
-
-
-
-
+<!-- footer -->
 <?php include "../view/includes/footer.php"; ?>
