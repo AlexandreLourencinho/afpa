@@ -12,7 +12,7 @@ class crud
         }
         // fonction pour rentrer un truc dans la base jarditou - public , utilisée par tout le monde
         public function ajoutProduit($pro_cat_id, $pro_ref, $pro_libelle, $pro_description, $pro_prix, $pro_stock, 
-                                     $pro_couleur, $extension, $pro_d_ajout, $pro_bloque)
+                                     $pro_couleur, $extension, $pro_d_ajout, $pro_photo, $pro_bloque)
         {
                 try 
                 {
@@ -103,6 +103,7 @@ class crud
                         {
                             date_default_timezone_set('Europe/Paris');
                             $pro_d_ajout = date("Y-m-d H:i:s");
+                            $pro_photo = NULL;
                             // prépare l'execution script sql avec placeholders
                             $sql = "INSERT INTO produits (pro_cat_id, pro_ref, pro_libelle, pro_description, pro_prix, pro_stock, pro_couleur, 
                             pro_photo, pro_d_ajout, pro_bloque) VALUES (:pro_cat_id, :pro_ref, :pro_libelle, :pro_description, :pro_prix, :pro_stock, :pro_couleur, 
@@ -117,6 +118,7 @@ class crud
                             $stmt->bindparam(":pro_stock", $pro_stock);
                             $stmt->bindparam(":pro_couleur", $pro_couleur);
                             $stmt->bindparam(":pro_d_ajout", $pro_d_ajout);
+                            $stmt->bindparam(":pro_photo", $pro_photo);
                             // Condition si le produit n'est pas bloqué alors cela affiche 0 ou NULL dans le tableau phpMyAdmin
                             if ($_POST['bloque']==0) 
                                 {
@@ -163,7 +165,7 @@ class crud
 
                 // fonction -publique ici aussi - pour éditer une station
                 public function modifProduit($pro_cat_id, $pro_ref, $pro_libelle, $pro_description, $pro_prix, $pro_stock, 
-                $pro_couleur, $extension, $pro_d_ajout, $pro_bloque)
+                $pro_couleur, $extension, $pro_d_ajout, $pro_photo, $pro_bloque)
                 {
                         try {
                             if(isset($_POST['illu']))
@@ -243,6 +245,7 @@ class crud
                                 {
                                     date_default_timezone_set('Europe/Paris'); // Toujours le datetime avant la variable $date
                                     $pro_d_ajout = date("Y-m-d H:i:s");
+                                    $pro_photo = NULL;
                                     // requete SQL pour update
                                     $sql = "UPDATE produits SET pro_ref=:pro_ref, pro_cat_id=:pro_cat_id, pro_libelle=:pro_libelle, 
                                     pro_description=:pro_description, pro_prix=:pro_prix, pro_stock=:pro_stock, pro_couleur=:pro_couleur, 
@@ -259,6 +262,7 @@ class crud
                                     $stmt->bindparam(":pro_stock", $pro_stock);
                                     $stmt->bindparam(":pro_couleur", $pro_couleur);
                                     $stmt->bindparam(":pro_d_ajout", $pro_d_ajout);
+                                    $stmt->bindparam(":pro_photo", $pro_photo);
                                     // Condition si le produit n'est pas bloqué alors cela affiche 0 ou NULL dans le tableau phpMyAdmin
                                     if ($_POST['bloque']==0) 
                                         {
