@@ -7,29 +7,33 @@ require_once "../../model/CRUD/crud.php";
 $crud = new crud($pdo); 
 var_dump($_POST);
 // si récupère l'id
-    if(!isset($_POST["submit"]))
+    if(isset($_POST['submit']))
         {
             date_default_timezone_set('Europe/Paris'); // Toujours le datetime avant la variable $date
-            $pro_d_modif = date("Y-m-d H:i:s");
             // extrait les valeurs incluses dans post
             $pro_id = $_POST['pro_id'];
+            $pro_cat_id = $_POST['pro_cat_id'];
             $pro_ref= $_POST['pro_ref'];
             $pro_libelle=$_POST['pro_libelle'];
             $pro_description = $_POST['pro_description'];
             $pro_prix= $_POST['pro_prix'];
             $pro_stock = $_POST['pro_stock'];
             $pro_couleur= $_POST['pro_couleur'];
+            $pro_d_ajout = $_POST['pro_d_ajout'];
+            $pro_d_modif = date("Y-m-d H:i:s");            
             $pro_bloque=$_POST['pro_bloque'];
                 if(!isset($_POST['illu'])){
                     $pro_photo = substr (strrchr ($_FILES['illu']['name'], "."), 1);
                 }else{
-                    $pro_photo = null;
+                    $pro_photo=NULL;
                 }
+                var_dump($pro_d_modif);
+                var_dump($pro_photo);
             // appelle la fonction qui va éditer
-            $result = $crud->update($pro_cat_id, $pro_ref, $pro_libelle, $pro_description, $pro_prix, $pro_stock, 
-            $pro_couleur, $pro_d_modif, $pro_bloque, $pro_photo);
+            $result = $crud->update($pro_id, $pro_cat_id, $pro_ref, $pro_libelle, $pro_description, 
+            $pro_prix, $pro_stock, $pro_couleur, $pro_photo, $pro_d_ajout, $pro_d_modif, $pro_bloque);
             // si réussi
-            if($result['result'] == true)
+            if($result['result'] == true && $pro_photo != NULL)
                 {
             // ----------------------------- SECURITE - VERIFICATION DU TYPE DE FICHIER AUTORISE -----------------------------
                             // On met les types autorisés dans un tableau (ici pour une image)
@@ -52,10 +56,10 @@ var_dump($_POST);
                                 {
                                     /* Le type est parmi ceux autorisés, donc OK, on va pouvoir déplacer et renommer le fichier */      
                                     // Requête SQL pour récupérer le nouveau nom qui est l'ID
-                                    $nouveauNom = $id.'.'.$pro_photo;
+                                    $nouveauNom = $pro_id.'.'.$pro_photo;
                                     $cheminEtNomTemporaire = $_FILES['illu']['tmp_name']; 
                                     // ['fichier'] récupère le name du fichier 
-                                    $cheminEtNomDefinitif = '../view/assets/images/jarditou_photos/'.$nouveauNom;
+                                    $cheminEtNomDefinitif = '../../assets/IMG/'.$nouveauNom;
                                     $moveIsOk = move_uploaded_file($cheminEtNomTemporaire, $cheminEtNomDefinitif); 
                                     // Fonction qui permet de renommer et déplacer le fichier dans le dossier souhaité
                                     if ($moveIsOk) 
@@ -70,12 +74,12 @@ var_dump($_POST);
                                         }
                                     
                                 }
-                    }
+                }
                     // sinon : message d'erreur
-                    else
-                    {
-                        echo "error";
-                    }
+                else
+                {
+                    header("location: ../../view/includes/success.php");
+                }
         }
         
                 // si ne récupère pas l'id

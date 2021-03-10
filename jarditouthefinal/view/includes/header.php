@@ -30,7 +30,7 @@
                   </div>
               </header>
                                                       <!-- navbar qui se collapse en menu burger -->
-              <nav class="navbar shadow navbar-expand-lg navbar-light bg-light">
+              <nav id="nav" class="navbar shadow navbar-expand-lg navbar-light bg-light">
                   <a class="navbar-brand" href="../../index.php">Jarditou : le site officiel</a>
                       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
                           <span class="navbar-toggler-icon"></span>
@@ -42,6 +42,9 @@
                           </li>
                           <li class="nav-item active">
                           <a class="nav-link" href="../../view/tableau_produits.php">voir nos produits</a>
+                          </li>
+                          <li class="nav-item active">
+                          <a class="nav-link" href="../../controller/produits/ajouter_produit.php">Ajoutez un produit</a>
                           </li>
                           <li class="nav-item active">
                           <a class="nav-link" href="../../view/formulaire_contact.php" tabindex="-1">contactez nous!</a>

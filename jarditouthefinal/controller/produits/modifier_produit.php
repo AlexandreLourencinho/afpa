@@ -40,7 +40,7 @@ $crud = new crud($pdo);
                 <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
                     <div class="card col-12 shadow-lg">
                     <img src="../../assets/IMG/<?php echo $r['pro_id'].'.'.$r['pro_photo']; ?>" alt="">
-                        <form method="post" action="../../model/produits/modifier_produit_script.php" enctype="multipart/form-data">
+                        <form method="POST" action="../../model/produits/modifier_produit_script.php" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="ref">Référence :</label>
                                     <input type="text" id="ref" class="form-control" name="pro_ref" value="<?php echo $r['pro_ref'];?>">
@@ -92,7 +92,7 @@ $crud = new crud($pdo);
 
 
                                 <label for="ref">Date d'ajout : </label>
-                                    <input type="text" class="form-control" readonly value="<?php 
+                                    <input type="text" class="form-control" name="pro_d_ajout" readonly value="<?php 
                                 echo $r['pro_d_ajout'];?>">
                                 <br>
 
@@ -101,7 +101,7 @@ $crud = new crud($pdo);
                                 <small id="illu" class="form-text text-muted"> optionnel</small>
                                  <br>
                                 <input type="hidden" name="pro_id" value="<?= $r['pro_id']; ?>">
-                                <button type="submit"  class="btn btn-info mb-3">Sauver les modifications</button>
+                                <button name="submit" value="submit" type="submit" class="btn btn-info mb-3">Sauver les modifications</button>
                                 <a href="../../view/tableau_produits.php" class="btn btn-primary mb-1">Retour a la liste des produits</a>                                
                             </div>
                         </form>

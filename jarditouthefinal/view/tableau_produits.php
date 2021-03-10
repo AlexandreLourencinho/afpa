@@ -11,18 +11,21 @@ $crud = new crud($pdo);
 $resultats = $crud->getProduits(); ?>
 
 <!-- tableau contenant les produits -->
-<table class="table table-striped table-hover table-responsive col-12">
+<div id="pricing" class="container">
+<table class="table text-center w-auto shadow-lg table-hover table-responsive table-bordered">
     <!--  tête de tableau -->
         <thead>
-            <th class="d-none d-lg-block">Photo</th>
-            <th>ID</th>
-            <th>Libellé</th>
-            <th>Prix</th>
-            <th>Stocks</th>
-            <th>couleur</th>
-            <th>Date d'ajout</th>
-            <th>Dernière modification</th>
-            <th>Blocage</th>
+        <tr>
+            <th id="photo" class="col-md-3">Photo</th>
+            <th scope="col" class="col-2">ID</th>
+            <th scope="col">Libellé</th>
+            <th scope="col">Prix</th>
+            <th scope="col">Stocks</th>
+            <th scope="col">couleur</th>
+            <th scope="col">Date d'ajout</th>
+            <th scope="col">Dernière modification</th>
+            <th scope="col">Blocage</th>
+        </tr>
         </thead>
         <!-- boucle qui crée le tableau tant qu'il y a des données a afficher -->
         <?php while($r = $resultats->fetch(PDO::FETCH_ASSOC))
@@ -31,10 +34,11 @@ $resultats = $crud->getProduits(); ?>
               { ?>
               <!--  début du tableau généré dynamiquement -->
               <!-- via noms de variables php -->
+              <tbody>
         <tr>
-            <td class="d-none d-lg-block"><img src="../assets/IMG/<?php echo $r['pro_id'].".".$r['pro_photo'] ?>"  style="max-width:20%;" class="img-fluid img-thumbnail d-none d-lg-block w-25"></td>
+            <th scope="row" id="photo2" class="d-none d-lg-block bg-warning col-12"><img src="../assets/IMG/<?php echo $r['pro_id'].".".$r['pro_photo'] ?>" class="img-fluid img-thumbnail d-none d-lg-block w-75 "></th>
             <td><?php echo $r['pro_id'] ?></td>
-            <td><a href="../view/details.php?id=<?php echo $r['pro_id']; ?>" class="text-danger"><u><b><?php echo strtoupper($r['pro_libelle']); ?></b></u></td>
+            <td class="bg-warning"><a href="../view/details.php?id=<?php echo $r['pro_id']; ?>" class="text-danger"><u><b><?php echo strtoupper($r['pro_libelle']); ?></b></u></td>
             <td><?php echo $r['pro_prix'] ?></td>
             <td><?php echo $r['pro_stock'] ?></td>
             <td><?php echo $r['pro_couleur'] ?></td>
@@ -48,8 +52,10 @@ $resultats = $crud->getProduits(); ?>
             <!-- <a onclick="//return confirm('êtes vous sûr de vouloir supprimer cette station?');"href="supprimertest.php?id=<?php //echo $r['sta_id']?>" class="btn btn-danger">SUPPRIMER</a> -->
             <!-- </td> --> 
         </tr>
+        </tbody>
         <!-- fermeture de l'accolade citée plus haut -->
         <?php } ?>
     </table>
+    </div>
 <!-- footer -->
 <?php include "../view/includes/footer.php"; ?>
