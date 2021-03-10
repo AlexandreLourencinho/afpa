@@ -3,6 +3,9 @@ $titre="erreur";
 // appel bdd et header
 // include "../view/includes/header.php";
 require_once "../model/bdd/conn_db.php"; 
+require_once "../model/CRUD/crud.php";
+//require_once "utilisateurs.php";
+$crud = new crud($pdo);
         if(!isset($_GET['id']))
         {
                 // message d'erreur
@@ -63,7 +66,8 @@ require_once "../model/bdd/conn_db.php";
                                     <input type="text" class="form-control" readonly value="<?php 
                                 echo $r['pro_d_modif'];?>">
                                 <br>
-                                <a href="viewrecords.php" class="btn btn-primary mb-3">Retour a la liste des produits</a>
+                                <a href="../../view/tableau_produits.php.php" class="btn btn-primary mb-3">Retour a la liste des produits</a>
+                                <a href="../../controller/produits/modifier_produit.php?id=<?php echo $r['pro_id']?>" type="button" class="btn btn-warning mb-3">Modifier</a>
                             </div>
                         </form>
 <!-- bouton pour retourner a la liste des stations -->

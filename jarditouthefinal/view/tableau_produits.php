@@ -4,14 +4,17 @@ $titre="nos produits!";
 // appel bdd et header
 include "../view/includes/header.php";
 require_once "../model/bdd/conn_db.php";
+require_once "../model/CRUD/crud.php";
+//require_once "utilisateurs.php";
+$crud = new crud($pdo);
 // appelle la fonction qui liste les stations
-$resultats = $crud->readd(); ?>
+$resultats = $crud->getProduits(); ?>
 
 <!-- tableau contenant les produits -->
 <table class="table table-striped table-hover table-responsive col-12">
     <!--  tête de tableau -->
         <thead>
-            <th>Photo</th>
+            <th class="d-none d-lg-block">Photo</th>
             <th>ID</th>
             <th>Libellé</th>
             <th>Prix</th>
@@ -29,7 +32,7 @@ $resultats = $crud->readd(); ?>
               <!--  début du tableau généré dynamiquement -->
               <!-- via noms de variables php -->
         <tr>
-            <td class="col-3"><img src="../assets/IMG/<?php echo $r['pro_id'].".".$r['pro_photo'] ?>" class="d-none d-lg-block w-25"></td>
+            <td class="d-none d-lg-block"><img src="../assets/IMG/<?php echo $r['pro_id'].".".$r['pro_photo'] ?>"  style="max-width:20%;" class="img-fluid img-thumbnail d-none d-lg-block w-25"></td>
             <td><?php echo $r['pro_id'] ?></td>
             <td><a href="../view/details.php?id=<?php echo $r['pro_id']; ?>" class="text-danger"><u><b><?php echo strtoupper($r['pro_libelle']); ?></b></u></td>
             <td><?php echo $r['pro_prix'] ?></td>
