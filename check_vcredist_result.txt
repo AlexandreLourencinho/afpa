@@ -1,0 +1,14 @@
+
+VC_2019_REDIST_X86 ID={EE2E15BB-54C8-4DB0-B1F3-026E3C166991}
+Visual C++ 2015-2019 x86 Minimum Runtime - 14.28.29325
+**** NOT INSTALLED ****
+Installation file is on: https://wampserver.aviatechno.net
+VC 2015-2019 (VC16 x86) 14.28.29325
+----------------------------------------
+VC_2019_REDIST_X64 ID={7D0362D5-C699-4403-BC09-0C1DAD1D93AB}
+Visual C++ 2015-2019 x64 Minimum Runtime - 14.28.29325
+**** NOT INSTALLED ****
+Installation file is on: http://wampserver.aviatechno.net
+VC 2015-2019 (VC16 x64) 14.28.29325
+----------------------------------------
+
