@@ -1,5 +1,9 @@
 <?php 
+include_once 'includes/session.php';
 $titre = "Contactez nous!";
+require "../model/bdd/conn_db.php";
+require_once '../model/CRUD/crud_user.php';
+$crud_user = new user($pdo);
 include "../view/includes/header.php"; ?>
 
 

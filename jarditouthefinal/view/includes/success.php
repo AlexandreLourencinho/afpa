@@ -2,6 +2,8 @@
 
 $titre = "Ajouté!";
 require_once "../../model/bdd/conn_db.php";
+require_once '../CRUD/crud_user.php';
+$crud_user = new user($pdo);
 include_once "../includes/header.php";
 
 ?>

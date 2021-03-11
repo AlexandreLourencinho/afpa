@@ -1,11 +1,13 @@
 <?php   
+include_once 'includes/session.php';
 $titre="erreur";    
-// appel bdd et header
-// include "../view/includes/header.php";
+// appel bdd
 require_once "../model/bdd/conn_db.php"; 
 require_once "../model/CRUD/crud.php";
 //require_once "utilisateurs.php";
 $crud = new crud($pdo);
+require_once '../model/CRUD/crud_user.php';
+$crud_user = new user($pdo);
         if(!isset($_GET['id']))
         {
                 // message d'erreur

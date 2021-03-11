@@ -1,7 +1,5 @@
 <?php
-include_once '../../model/login/session_destroy.php';
-?>
-<?php
+include_once 'session_start.php';
 session_destroy();
 header('location: ../../index.php');
 ?>

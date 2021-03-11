@@ -60,7 +60,7 @@
                           </li>
                           <?php } else {?>
                             <div class="navbar-nav active">
-                            <a class="nav-link" href="../logout.php">Se déconnecter</a>
+                            <a class="nav-link" href="../../model/login/session_destroy.php">Se déconnecter</a>
                             <a class="nav-item nav-link" href="#">Bonjour <?php echo $_SESSION['pseudo'];?>!</span>
                             </div>
                           <?php } ?>
@@ -73,5 +73,5 @@
               </nav>
                                                                                <!-- logo promotion jarditou lames de terrasse  -->
                                                                                <div class="p-0 col-12">
-                    <img src="../../assets/IMG/promotion.jpg" class="w-100 img-fluid mb-2" title="depensez votre argent chez nous PUTAIN" alt="Image de promotion de lames de terasses" id="promo">
+                    <img src="../../assets/IMG/promotion.jpg" class="w-100 img-fluid mb-2 shadow-lg" title="depensez votre argent chez nous PUTAIN" alt="Image de promotion de lames de terasses" id="promo">
               </div>

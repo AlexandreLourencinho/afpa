@@ -4,14 +4,21 @@ require "../CRUD/crud_user.php";
 $crud_user = new user($pdo);
 if(isset($_POST['submit']))
 {
-            if($_POST['mdp']=$_POST['mdp2'])
+            if($_POST['mdp']==$_POST['mdp2'])
             {
                 $user_id = NULL;
                 $pseudo = $_POST['pseudo'];
                 $mdp= $_POST['mdp'];
                 $email= $_POST['email'];
                 $result = $crud_user->insertUser($user_id, $pseudo, $mdp, $email);
-                header("location: ../../view/includes/success2.php");
+                if($result==false)
+                {
+                    header("location: ../../view/includes/failuser.php");
+                }
+                else
+                {
+                    header("location: ../../view/includes/success2.php");
+                }
             }
             else
             {

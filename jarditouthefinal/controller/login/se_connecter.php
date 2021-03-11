@@ -12,9 +12,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         $mdp = $_POST['mdp'];
         $new_mdp = md5($mdp . $pseudo);
         $email = $_POST['email'];
-
+        
         $resultat = $crud_user->getUser($pseudo, $new_mdp, $email);
         //var_dump($resultat);
+        //var_dump($resultat);
+        //die();
         if(!$resultat) 
             {
                 echo "<div class='alert alert-danger'> nom d'utilisateur ou mot de passe incorrect ! Essayez a nouveau.</div>";
@@ -22,14 +24,24 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         else 
             {
                 $_SESSION['pseudo'] = $pseudo;
-                $_SESSION['user_Id'] = $resultat['user_id'];
-                header("location: ../../view/tableau_produits.php");
+                $_SESSION['user_id'] = $resultat['user_id'];
+                var_dump($_SESSION);
+                //die();
+                //sleep(5);
+                session_write_close();
+                header("location: ../../index.php");
+                // session_regenerate_id(true);
+                // die();
+                // session_regenerate_id(true);
+                exit();
+                // session_regenerate_id(true);
+
             }
 
     }
 include "../../view/includes/header.php";
 ?>
-
+<div class="d-flex flex-column justify-content-center align-items-center">
 <h1 class="text-center text-primary"><?php echo $titre; ?></h1>
 
     <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
@@ -50,6 +62,7 @@ include "../../view/includes/header.php";
         <input type="submit" value="login" class="btn btn-info btn-block rounded">
         <a href="#"> Mot de passe oublié?</a>
     </form>
+</div>
 <br><br>
 
 <?php include '../../view/includes/footer.php'; ?>

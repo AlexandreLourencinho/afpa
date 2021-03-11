@@ -1,4 +1,5 @@
-<?php   
+<?php 
+include_once '../../view/includes/session.php';  
 $titre="Ajoutez un produit!";    
 // appel bdd et header
 // include "../view/includes/header.php";
@@ -10,6 +11,8 @@ $requete = "SELECT * FROM categories group by cat_id"; // Requête SQL pour sél
 $result = $pdo->query($requete);
 date_default_timezone_set('Europe/Paris'); 
 $pro_d_ajout = date("Y-m-d");
+require_once '../../model/CRUD/crud_user.php';
+$crud_user = new user($pdo);
 include "../../view/includes/header.php";
 ?>
 <section id="cover">

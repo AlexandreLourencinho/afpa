@@ -5,6 +5,8 @@ require '../CRUD/crud.php';
 // require_once 'includes/auth_check.php';
 // -- si récupère bien l'id souhaité
 $crud = new crud($pdo);
+require_once '../CRUD/crud_user.php';
+$crud_user = new user($pdo);
     if($_GET['id'])
         {
                 // assigne l'id a $id

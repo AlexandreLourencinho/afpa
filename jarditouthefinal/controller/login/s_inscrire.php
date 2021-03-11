@@ -1,18 +1,11 @@
 <?php 
+include_once '../../view/includes/session.php';
 require "../../model/bdd/conn_db.php";
 require "../../model/CRUD/crud_user.php";
 $titre = "s'inscrire!";
+require_once '../../model/CRUD/crud_user.php';
+$crud_user = new user($pdo);
 include "../../view/includes/header.php";
-
-
-
-
-
-
-
-
-
-
 ?>
 <section id="cover">
     <div id="cover-caption">

@@ -14,6 +14,7 @@
                         $resultats = $this->getUserByUserName($pseudo);
                         if($resultats['nombre'] > 0)
                             {
+
                                 return false;
                             }
                         else 

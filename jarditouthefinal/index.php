@@ -1,8 +1,12 @@
 <?php 
+include_once 'view/includes/session.php';
+require "model/bdd/conn_db.php";
 $titre = "Acceuil Jarditou";
+require_once 'model/CRUD/crud_user.php';
+$crud_user = new user($pdo);
 include "view/includes/header.php"; ?>
-<!-- CONTENU DE MA PAGE -->
- 
+<!-- CONTENU DE LA PAGE -->
+<?php var_dump($_SESSION);?>
 <div class="container-fluid shadow">       
                     <div class="row">
                         <div class="col-12 col-md-8 shadow mb-3 mb-md-0">

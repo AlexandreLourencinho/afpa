@@ -5,6 +5,8 @@ $titre = "ajoutpost" ;
 require_once "../../model/bdd/conn_db.php";
 require_once "../../model/CRUD/crud.php";
 $crud = new crud($pdo); 
+require_once '../CRUD/crud_user.php';
+$crud_user = new user($pdo);
 var_dump($_POST);
 // si récupère l'id
     if(isset($_POST['submit']))
