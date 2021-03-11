@@ -96,12 +96,14 @@ $crud = new crud($pdo);
                                 echo $r['pro_d_ajout'];?>">
                                 <br>
 
-                                <label for="illu">choisissez une photo d'illustration</label>
-                                <input type="file" accept="image/*" class="btn btn-primary" id="illu" name="illu">
-                                <small id="illu" class="form-text text-muted"> optionnel</small>
-                                 <br>
                                 <input type="hidden" name="pro_id" value="<?= $r['pro_id']; ?>">
-                                <button name="submit" value="submit" type="submit" class="btn btn-info mb-3">Sauver les modifications</button>
+
+                                <label for="illu">choisissez une photo d'illustration</label>
+                                <input type="file" accept="image/*" class="btn btn-primary" id="illu" name="illu">     
+                                <br>                          
+                                
+                                <button name="submit" value="submit" type="submit" class="btn btn-info mt-3">Sauver les modifications</button>
+                                <br><br>
                                 <a href="../../view/tableau_produits.php" class="btn btn-primary mb-1">Retour a la liste des produits</a>                                
                             </div>
                         </form>

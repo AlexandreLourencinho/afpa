@@ -51,14 +51,17 @@
                           </li>
                       </ul>
                       <ul class="navbar-nav ml-auto">
-                      <?php if(!isset($_SESSION['userId'])){ ?>
+                      <?php if(!isset($_SESSION['user_id'])){ ?>
                           <li class="nav-item active">
-                          <a class="nav-item nav-link" href="../login.php">Se connecter</a>
+                          <a class="nav-item nav-link" href="../../controller/login/se_connecter.php">Se connecter</a>
+                          </li>
+                          <li class="nav-item active">
+                          <a class="nav-item nav-link" href="../../controller/login/s_inscrire.php">S'inscrire</a>
                           </li>
                           <?php } else {?>
                             <div class="navbar-nav active">
                             <a class="nav-link" href="../logout.php">Se déconnecter</a>
-                            <a class="nav-item nav-link" href="#">Bonjour <?php echo $_SESSION['nomUser'];?>!</span>
+                            <a class="nav-item nav-link" href="#">Bonjour <?php echo $_SESSION['pseudo'];?>!</span>
                             </div>
                           <?php } ?>
                       </ul>

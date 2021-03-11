@@ -16,8 +16,8 @@ $resultats = $crud->getProduits(); ?>
     <!--  tête de tableau -->
         <thead>
         <tr>
-            <th id="photo" class="col-md-3">Photo</th>
-            <th scope="col" class="col-2">ID</th>
+            <th id="photo">Photo</th>
+            <th scope="col">ID</th>
             <th scope="col">Libellé</th>
             <th scope="col">Prix</th>
             <th scope="col">Stocks</th>
@@ -36,7 +36,7 @@ $resultats = $crud->getProduits(); ?>
               <!-- via noms de variables php -->
               <tbody>
         <tr>
-            <th scope="row" id="photo2" class="d-none d-lg-block bg-warning col-12"><img src="../assets/IMG/<?php echo $r['pro_id'].".".$r['pro_photo'] ?>" class="img-fluid img-thumbnail d-none d-lg-block w-75 "></th>
+            <th id="photo2" class="bg-warning"><img width='150' src="../assets/IMG/<?php echo $r['pro_id'].".".$r['pro_photo'] ?>" class="img-thumbnail"></th>
             <td><?php echo $r['pro_id'] ?></td>
             <td class="bg-warning"><a href="../view/details.php?id=<?php echo $r['pro_id']; ?>" class="text-danger"><u><b><?php echo strtoupper($r['pro_libelle']); ?></b></u></td>
             <td><?php echo $r['pro_prix'] ?></td>
@@ -45,12 +45,6 @@ $resultats = $crud->getProduits(); ?>
             <td><?php echo $r['pro_d_ajout'] ?></td>
             <td><?php echo $r['pro_d_modif'] ?></td>
             <td><?php echo $r['pro_bloque'] ?></td>
-            <!-- <td>
-            <a href="details.php?id=<?php // echo $r['sta_id']?>" class="btn btn-dark"> détails</a>
-            <a href="editer.php?id=<?php //echo $r['sta_id']?>" class="btn btn-warning">EDITER</a>
-            <!-- bouton supprimé avec alerte JS -->
-            <!-- <a onclick="//return confirm('êtes vous sûr de vouloir supprimer cette station?');"href="supprimertest.php?id=<?php //echo $r['sta_id']?>" class="btn btn-danger">SUPPRIMER</a> -->
-            <!-- </td> --> 
         </tr>
         </tbody>
         <!-- fermeture de l'accolade citée plus haut -->

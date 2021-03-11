@@ -6,33 +6,7 @@
 	color: black;
 	background-color: black;
 }
-/* table th {
-	text-align: center; 
- }
- 
- .table {
-	margin: auto;
-	width: 50% !important; 
- } */
- /* table.table-fit {
-    width: auto !important;
-    table-layout: auto !important;
-}
-table.table-fit thead th, table.table-fit tfoot th {
-    width: auto !important;
-}
-table.table-fit tbody td, table.table-fit tfoot td {
-    width: auto !important;
-}
-.table-fit {
-    width: 1px;
-} */
-/* .table td.fit, 
-.table th.fit {
-    white-space: nowrap;
-    width: 1%;
-} */
-@media screen and (max-width: 768px)
+@media screen and (max-width: 640px)
 {
 #photo {
 	display: none;

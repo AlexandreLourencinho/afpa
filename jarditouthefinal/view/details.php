@@ -24,8 +24,6 @@ $crud = new crud($pdo);
         
         ?>
 
-<!-- affichage de la carte station -->
-
 
 <section id="cover">
     <div id="cover-caption">
@@ -66,8 +64,10 @@ $crud = new crud($pdo);
                                     <input type="text" class="form-control" readonly value="<?php 
                                 echo $r['pro_d_modif'];?>">
                                 <br>
-                                <a href="../../view/tableau_produits.php.php" class="btn btn-primary mb-3">Retour a la liste des produits</a>
+                                <a href="../../view/tableau_produits.php" class="btn btn-primary mb-3">Retour a la liste des produits</a>
                                 <a href="../../controller/produits/modifier_produit.php?id=<?php echo $r['pro_id']?>" type="button" class="btn btn-warning mb-3">Modifier</a>
+                                <a href="../../controller/produits/supprimer_produit.php?id=<?php echo $r['pro_id']?>" type="button" class="btn btn-danger mb-3" 
+                                onclick="confirm('Êtes vous sûrs de vouloir supprimer ce produit?')">Supprimer</a>
                             </div>
                         </form>
 <!-- bouton pour retourner a la liste des stations -->
@@ -83,6 +83,5 @@ $crud = new crud($pdo);
 
 
 
-<script src="../assets/javascript/details.js"></script>
 <!-- footer -->
 <?php include "../view/includes/footer.php"; ?>
