@@ -26,14 +26,18 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                 $_SESSION['pseudo'] = $pseudo;
                 $_SESSION['user_id'] = $resultat['user_id'];
                 var_dump($_SESSION);
+                //session_start();
+                var_dump($_SESSION);
                 //die();
                 //sleep(5);
                 session_write_close();
-                header("location: ../../index.php");
+                echo "<div class='alert alert-success'> Vous êtes connecté! </div>";
+                var_dump($_SESSION);
+                //header("location: ../../index.php");
                 // session_regenerate_id(true);
                 // die();
                 // session_regenerate_id(true);
-                exit();
+                //exit();
                 // session_regenerate_id(true);
 
             }

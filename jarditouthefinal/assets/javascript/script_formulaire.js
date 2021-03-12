@@ -28,7 +28,7 @@ function checkForm(form)
     //   check nom vide--------------------------------------------------------------------------------------------
     if(form.nom.value == "") {
         document.getElementById("nomerr").style.color = "#ff0000";
-        document.getElementById("nomerr").innerHTML = "Le champ est vide!";
+        document.getElementById("nomerr").innerHTML = "<div class='alert alert-danger'>Le champ est vide!</div>";
         document.getElementById('nom').style.borderColor = "red";
         form.nom.focus();
         bool=false;
@@ -36,7 +36,7 @@ function checkForm(form)
 // chek nom avec la regex fnom, entoure le cadre en rouge si faux--------------------------------------------------
     else if(!fnom.test(form.nom.value)) {
         document.getElementById("nomerr").style.color = "#ff0000";
-        document.getElementById("nomerr").innerHTML = "Uniquement des lettres majuscules ou minuscules";
+        document.getElementById("nomerr").innerHTML = "<div class='alert alert-danger'>Uniquement des lettres majuscules ou minuscules</div>";
         document.getElementById('nom').style.borderColor = "red";
         form.nom.focus();
         bool=false;
@@ -44,14 +44,14 @@ function checkForm(form)
     // vide le message d'erreur et entoure le cadre en vert pour indiquer que ce champs est correct----------------
     else
     {
-        document.getElementById("nomerr").innerHTML = "";
+        document.getElementById("nomerr").innerHTML = "<div class='alert alert-success'>champ OK</div>";
         document.getElementById('nom').style.borderColor = "limegreen";
     }
 
     //   check  prenom vide-----------------------------------------------------------------------------------------
     if(form.prenom.value == "") {
         document.getElementById("prenerr").style.color = "#ff0000";
-        document.getElementById("prenerr").innerHTML = "Le champ est vide!";
+        document.getElementById("prenerr").innerHTML = "<div class='alert alert-danger'>Le champ est vide!</div>";
         form.prenom.focus();
         document.getElementById('prenom').style.borderColor = "red";
         bool=false;
@@ -59,7 +59,7 @@ function checkForm(form)
 //     // check  prenom avec la même regex que celle du nom, fnom--------------------------------------------------
     else if(!fnom.test(form.prenom.value)) {
         document.getElementById("prenerr").style.color = "#ff0000";
-        document.getElementById("prenerr").innerHTML = "Uniquement des lettres majuscules ou minuscules";
+        document.getElementById("prenerr").innerHTML = "<div class='alert alert-danger'>Uniquement des lettres majuscules ou minuscules</div>";
         document.getElementById('prenom').style.borderColor = "red";
         form.prenom.focus();
         bool=false;
@@ -68,12 +68,12 @@ function checkForm(form)
     else 
     {
         document.getElementById('prenom').style.borderColor = "limegreen";
-        document.getElementById("prenerr").innerHTML = "";
+        document.getElementById("prenerr").innerHTML = "<div class='alert alert-success'>champ OK</div>";
     }
     // check code postal vide --------------------------------------------------------------------------------------
     if(form.codep.value == "") {
         document.getElementById("codeperr").style.color = "#ff0000";
-        document.getElementById("codeperr").innerHTML ="le champs est vide!";
+        document.getElementById("codeperr").innerHTML ="<div class='alert alert-danger'>le champs est vide!</div>";
         document.getElementById('codep').style.borderColor = "red";
             form.codep.focus();
             bool=false;
@@ -81,7 +81,7 @@ function checkForm(form)
     // check code postal avec la regex fcodep--------------------------------------------------------------------------------------
     else if(!fcodep.test(form.codep.value)) {
         document.getElementById("codeperr").style.color = "#ff0000";
-        document.getElementById("codeperr").innerHTML ="entrez un code postal au format valide. exemple : 84560"
+        document.getElementById("codeperr").innerHTML ="<div class='alert alert-danger'>entrez un code postal au format valide. exemple : 84560</div>"
         document.getElementById('codep').style.borderColor = "red";
         form.codep.focus();
         bool=false;
@@ -90,12 +90,12 @@ function checkForm(form)
     else
     {
         document.getElementById('codep').style.borderColor = "limegreen";
-        document.getElementById("codeperr").innerHTML = ""
+        document.getElementById("codeperr").innerHTML = "<div class='alert alert-success'>champ OK</div>";
     }
 // check ville vide-------------------------------------------------------------------------------------------------
     if(form.ville.value == "") {
         document.getElementById("villerr").style.color = "#ff0000";
-        document.getElementById("villerr").innerHTML ="le champs est vide!"
+        document.getElementById("villerr").innerHTML ="<div class='alert alert-danger'>le champ est vide!</div>";
         document.getElementById('ville').style.borderColor = "red";
         form.ville.focus();
         bool=false;
@@ -103,7 +103,7 @@ function checkForm(form)
 // check ville avec la regex fville------------------------------------------------------------------------------------------------
     else if(!fville.test(form.ville.value)) {
         document.getElementById("villerr").style.color = "#ff0000";
-        document.getElementById("villerr").innerHTML ="Entrez un nom de ville!"
+        document.getElementById("villerr").innerHTML ="<div class='alert alert-danger'>Entrez un nom de ville!</div>"
         document.getElementById('ville').style.borderColor = "red";
         form.ville.focus();
         bool=false;
@@ -111,12 +111,12 @@ function checkForm(form)
      // vide le message d'erreur et entoure le cadre en vert pour indiquer que ce champs est correct----------------
     else{
         document.getElementById('ville').style.borderColor = "limegreen";
-        document.getElementById("villerr").innerHTML = "";
+        document.getElementById("villerr").innerHTML = "<div class='alert alert-success'>champ OK</div>";
     }
     // check mail vide-------------------------------------------------------------------------------------------------
     if(form.mail.value == "") {
         document.getElementById("emailerr").style.color = "#ff0000";
-        document.getElementById("emailerr").innerHTML ="le champs est vide!"
+        document.getElementById("emailerr").innerHTML ="<div class='alert alert-danger'>le champ est vide!</div>"
         document.getElementById('mail').style.borderColor = "red";
         form.mail.focus();
         bool=false;
@@ -124,7 +124,7 @@ function checkForm(form)
 // check mail avec la regex fmail------------------------------------------------------------------------------------------------
     else if(!fmail.test(form.mail.value)) {
         document.getElementById("emailerr").style.color = "#ff0000";
-        document.getElementById("emailerr").innerHTML ="Entrez un email au format valide: example@yahoo.fr"
+        document.getElementById("emailerr").innerHTML ="<div class='alert alert-danger'>Entrez un email au format valide: example@yahoo.fr</div>";
         document.getElementById('mail').style.borderColor = "red";
         form.mail.focus();
         bool=false;
@@ -132,12 +132,12 @@ function checkForm(form)
      // vide le message d'erreur et entoure le cadre en vert pour indiquer que ce champs est correct----------------
     else{
         document.getElementById('mail').style.borderColor = "limegreen";
-        document.getElementById("mailerr").innerHTML = "";
+        document.getElementById("mailerr").innerHTML = "<div class='alert alert-success'>champ OK</div>";
     }
   // check adresse vide---------------------------------------------------------------------------------------------
     if(form.adresse.value == "") {
         document.getElementById("adresserr").style.color = "#ff0000";
-        document.getElementById("adresserr").innerHTML ="Le champ est vide!";
+        document.getElementById("adresserr").innerHTML ="<div class='alert alert-danger'>Le champ est vide!</div>";
         document.getElementById('adresse').style.borderColor = "red";
     form.adresse.focus();
     bool=false;
@@ -145,7 +145,7 @@ function checkForm(form)
 // check adresse avec la regex fadresse-----------------------------------------------------------------------------
     else if(!fadresse.test(form.adresse.value)) {
         document.getElementById("adresserr").style.color = "#ff0000";
-        document.getElementById("adresserr").innerHTML = "Entrez une adresse valide"
+        document.getElementById("adresserr").innerHTML = "<div class='alert alert-danger'>Entrez une adresse valide</div>"
         document.getElementById('adresse').style.borderColor = "red";
     form.adresse.focus();
     bool=false;
@@ -154,12 +154,12 @@ function checkForm(form)
     else
     {
         document.getElementById('adresse').style.borderColor = "limegreen";
-        document.getElementById("adresserr").innerHTML = "";
+        document.getElementById("adresserr").innerHTML = "<div class='alert alert-success'>champ OK</div>";
     } 
     // zone de texte vide-------------------------------------------------------------------------------------------
     if(form.reclamation.value == "") {
         document.getElementById("texterr").style.color = "#ff0000";
-        document.getElementById("texterr").innerHTML ="Le champ est vide!";
+        document.getElementById("texterr").innerHTML ="<div class='alert alert-danger'>Le champ est vide!</div>";
         document.getElementById('reclamation').style.borderColor = "red";
     form.reclamation.focus();
     bool=false;
@@ -168,15 +168,21 @@ function checkForm(form)
     else
     {
         document.getElementById('reclamation').style.borderColor = "limegreen";
-        document.getElementById("texterr").innerHTML = ""
+        document.getElementById("texterr").innerHTML = "<div class='alert alert-success'>champ OK</div>";
     }
     // checkbox cochée ou non---------------------------------------------------------------------------------------
     if(form.Check1.checked==false) {
         document.getElementById("checkerr").style.color = "#ff0000";
-        document.getElementById("checkerr").innerHTML = "Vous devez cocher cette case pour nous autoriser a traiter le formulaire.";
+        document.getElementById("checkerr").innerHTML = "<div class='alert alert-danger'>Vous devez cocher cette case pour nous autoriser a traiter le formulaire.</div>";
         document.getElementById('Check1').style.borderColor = "red";
         bool=false;
       }
+    else
+    {
+        document.getElementById('Check1').style.borderColor = "limegreen";
+        document.getElementById("checkerr").innerHTML = "<div class='alert alert-success'>case cochée</div>";
+
+    }
     //   validation réussie
     return bool;
 
