@@ -1,5 +1,5 @@
 <?php
-
+// crud user - les fonctions CRUD en rapport avec la table user
     class user {
                 // objet base de donnée privée
                 private $db;
@@ -8,17 +8,21 @@
                 {
                         $this->db = $conn;
                 }
-                 public function insertUser($user_id, $pseudo, $mdp, $email){
+                // fonction création utilisateur
+                 public function insertUser($user_id, $pseudo, $mdp, $email)
+                 {
                     try 
-                    {       
+                    {       // vérifie avec la fonction getuserbyusername (définie plus bas) si le pseudo à déja été utilisé ou pas
                         $resultats = $this->getUserByUserName($pseudo);
                         if($resultats['nombre'] > 0)
                             {
-
+                                    // si nom utilisateur déjà existant, retour false
                                 return false;
                             }
                         else 
                             {
+                                // si nom d'utilisateur n'existe pas
+                                // chiffre le mdp avec le nom d'util pour le stockage
                             $new_mdp = md5($mdp . $pseudo);
                             // prépare l'execution script sql avec placeholders
                             $sql = "INSERT INTO utilisateurs (pseudo, mdp, email) VALUES (:pseudo, :mdp, :email)";
@@ -44,12 +48,12 @@
                             return false;
                     }
 
-                 }
-
+                }
+                        // fonction qui récupère tous les utilisateurs
                  public function getUser($pseudo, $new_mdp, $email){
                             try {
 
-                                        // $new_password = md5($password . $nomUser);
+                              
                                         // preparation de la requête sql + identification table
                                         $sql = "SELECT * FROM utilisateurs WHERE pseudo = :pseudo AND mdp = :mdp AND email = :email";
                                         // appel de la fonction de préparation de la requete sql
@@ -73,7 +77,7 @@
                                                 return false;
                                               }
                  }
-
+                 // retrouve un utilisateur via le pseudo
                  public function getUserByUserName($pseudo){
                                 try {
                                         $sql = "SELECT COUNT(*) as nombre from utilisateurs where pseudo = :pseudo";

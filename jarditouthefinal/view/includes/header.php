@@ -61,7 +61,7 @@
                           <?php } else {?>
                             <div class="navbar-nav active">
                             <a class="nav-link" href="../../model/login/session_destroy.php">Se déconnecter</a>
-                            <a class="nav-item nav-link" href="#">Bonjour <?php echo $_SESSION['pseudo'];?>!</span>
+                            <a class="nav-item nav-link" href="#">Bonjour <?php echo $_SESSION['pseudo'];?>!</a>
                             </div>
                           <?php } ?>
                       </ul>

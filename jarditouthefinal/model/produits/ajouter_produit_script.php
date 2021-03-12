@@ -1,14 +1,13 @@
 <?php 
 // pas besoin d'un titre...
 $titre = "ajoutpost" ;
-// appelle la BDD
+// appelle la BDD et le crud et le crud user
 require_once "../../model/bdd/conn_db.php";
 require_once "../../model/CRUD/crud.php";
 $crud = new crud($pdo); 
 require_once '../CRUD/crud_user.php';
 $crud_user = new user($pdo);
-var_dump($_POST);
-// si récupère l'id
+    // si récupère l'id
     if(isset($_POST['submit']))
         {
             date_default_timezone_set('Europe/Paris'); // Toujours le datetime avant la variable $date
@@ -24,12 +23,7 @@ var_dump($_POST);
             $pro_d_ajout = $_POST['pro_d_ajout'];
             $pro_d_modif = NULL;            
             $pro_bloque=$_POST['pro_bloque'];
-
-                // if(isset($_POST['pro_photo'])){
-                //     $pro_photo = substr (strrchr ($_FILES['pro_photo']['name'], "."), 1);
-                // }else{
-                //     $pro_photo=NULL;
-                // }
+                // définit en fonction du pro_photo la marche à suivre
                 if(empty($_POST['pro_photo']))
                 {
                     $pro_photo = substr (strrchr ($_FILES['pro_photo']['name'], "."), 1);

@@ -3,7 +3,6 @@ include_once 'includes/session.php';
 // titre page
 $titre="nos produits!";
 // appel bdd et header
-var_dump($_SESSION);
 require_once "../model/bdd/conn_db.php";
 require_once "../model/CRUD/crud.php";
 //require_once "utilisateurs.php";
@@ -13,7 +12,6 @@ $crud_user = new user($pdo);
 // appelle la fonction qui liste les stations
 $resultats = $crud->getProduits(); 
 include "../view/includes/header.php";?>
-<?php var_dump($_SESSION); ?>
 <!-- tableau contenant les produits -->
 <div id="pricing" class="container">
 <table class="table text-center w-auto shadow-lg table-hover table-responsive table-bordered">

@@ -1,20 +1,27 @@
 <?php 
+// appelle la session et le aut_check, pour vérifier que l'utilisateur peut accéder à cette page
 include_once '../../view/includes/session.php';  
+require "../../view/includes/auth_check.php";
+// titre de la page
 $titre="Ajoutez un produit!";    
 // appel bdd et header
-// include "../view/includes/header.php";
 require_once "../../model/bdd/conn_db.php";
 require_once "../../model/CRUD/crud.php";
-//require_once "utilisateurs.php";
+// appelle le crud - page des fonctions de création, update etc de produits
 $crud = new crud($pdo); 
+// la requête qui sera utilisée ici : différente de celle du crud, pas eu le temps de l'y intégrer
 $requete = "SELECT * FROM categories group by cat_id"; // Requête SQL pour sélectionner les catégories 
 $result = $pdo->query($requete);
+//définit la timezone et assigne à la date la date du jour - ne pourra pas être modifié
 date_default_timezone_set('Europe/Paris'); 
 $pro_d_ajout = date("Y-m-d");
+// appelle le crud user pour vérifier les droits
 require_once '../../model/CRUD/crud_user.php';
 $crud_user = new user($pdo);
+// header
 include "../../view/includes/header.php";
 ?>
+<!-- le menu déroulant est généré dynamiquement en fonction de la requête ci dessus -->
 <section id="cover">
     <div id="cover-caption">
         <div class="container">

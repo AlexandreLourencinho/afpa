@@ -29,8 +29,7 @@ var_dump($_POST);
                 }else{
                     $pro_photo=NULL;
                 }
-                var_dump($pro_d_modif);
-                var_dump($pro_photo);
+ 
             // appelle la fonction qui va éditer
             $result = $crud->update($pro_id, $pro_cat_id, $pro_ref, $pro_libelle, $pro_description, 
             $pro_prix, $pro_stock, $pro_couleur, $pro_photo, $pro_d_ajout, $pro_d_modif, $pro_bloque);

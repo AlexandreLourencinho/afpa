@@ -1,14 +1,17 @@
-<?php   
+<?php
+//appelle la session et l'auth check qui vérifie
 include_once '../../view/includes/session.php';
+require "../../view/includes/auth_check.php";
+// définit le titre par défaut comme étant erreur
 $titre="erreur";    
-// appel bdd et header
-// include "../view/includes/header.php";
+// appel bdd et crud
 require_once "../../model/bdd/conn_db.php"; 
 require_once "../../model/CRUD/crud.php";
-//require_once "utilisateurs.php";
 $crud = new crud($pdo);
+//appelle le crud user
 require_once '../../model/CRUD/crud_user.php';
 $crud_user = new user($pdo);
+// si l'id  n'est pas récupéré 
         if(!isset($_GET['id']))
         {
                 // message d'erreur
@@ -17,6 +20,7 @@ $crud_user = new user($pdo);
         }
         else 
         {
+            // si l'id est récupéré
                 // assigne l'id a $id
                 $id = $_GET['id'];
                 // appelle la fonction getdetails qui récupère les données d'une station
@@ -25,6 +29,7 @@ $crud_user = new user($pdo);
                 $titre = $r['pro_libelle'];
                 include "../../view/includes/header.php";
 ?>
+<!-- même principe que pour la modification : les infos sont rentrés de base dans les champs en les récupérant avec l'id -->
 <section id="cover">
     <div id="cover-caption">
         <div class="container">

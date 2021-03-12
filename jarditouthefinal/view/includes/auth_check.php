@@ -1,4 +1,4 @@
 <?php
-if(!isset($_SESSION['userId'])){ 
-    header("location: login.php");
+if(!isset($_SESSION['user_id'])){ 
+    header("location: ../../controller/login/se_connecter.php");
 } ?>

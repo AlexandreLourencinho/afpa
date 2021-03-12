@@ -1,8 +1,8 @@
 <?php
-// appel bdd-- page fonction delete
+// appel bdd-- page fonction delete, et le CRUD
 require "../bdd/conn_db.php";
 require '../CRUD/crud.php';
-// require_once 'includes/auth_check.php';
+
 // -- si récupère bien l'id souhaité
 $crud = new crud($pdo);
 require_once '../CRUD/crud_user.php';

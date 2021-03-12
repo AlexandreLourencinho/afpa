@@ -1,5 +1,5 @@
 <?php 
-
+//titre, appelle bdd et crud
 $titre = "Ajouté!";
 require_once "../../model/bdd/conn_db.php";
 require_once '../CRUD/crud_user.php';

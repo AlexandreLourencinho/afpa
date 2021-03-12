@@ -1,14 +1,18 @@
-<?php   
+<?php
+// appelle la session et le aut_check pour gérer les droits d'accès à cette page
 include_once '../../view/includes/session.php';
-$titre="erreur";    
+require "../../view/includes/auth_check.php";
+include_once '../../view/includes/session.php';
+// titre de la page par défaut si le détail du produit n'a pas été chargé
+$titre="erreur";
 // appel bdd et header
-// include "../view/includes/header.php";
 require_once "../../model/bdd/conn_db.php";
 require_once "../../model/CRUD/crud.php";
-//require_once "utilisateurs.php";
+//appelle le crud user et le crud (juste au dessus) afin de gérer les fonctions et les comptes utilisateurs
 $crud = new crud($pdo); 
 require_once '../../model/CRUD/crud_user.php';
 $crud_user = new user($pdo);
+// si l'id du produit n'est pas récupéré
         if(!isset($_GET['id']))
         {
                 // message d'erreur
@@ -17,6 +21,7 @@ $crud_user = new user($pdo);
         }
         else 
         {
+            //si l'id est récupéré
                 // assigne l'id a $id
                 $id = $_GET['id'];
                 // appelle la fonction getdetails qui récupère les données d'une station
@@ -30,12 +35,12 @@ $crud_user = new user($pdo);
                 $produit = $result->fetch(PDO::FETCH_OBJ);
                 $categories = $result2->fetchAll(PDO::FETCH_OBJ);
                 
-                // titre page
+                // titre page si pas erreur
                 $titre = "Edition de : ".$r['pro_libelle'];
                 include "../../view/includes/header.php";
         
         ?>
-
+<!-- les noms , catégories, prix etc sont récupérés de la bdd d'après l'id et  -->
 <section id="cover">
     <div id="cover-caption">
         <div class="container">

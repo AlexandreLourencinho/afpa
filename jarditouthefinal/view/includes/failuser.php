@@ -1,5 +1,7 @@
 <?php 
+// titre
 $titre="erreur création compte";
+// appelle bdd e crud user
 require "../../model/bdd/conn_db.php";
 require_once "../../model/CRUD/crud_user.php";
 $crud_user = new user($pdo);

@@ -1,44 +1,40 @@
 <?php
+// pour le session start
+include_once "../../view/includes/session.php";
 // titre page
 $titre = "Se connecter";
 // appel bdd et script
 require "../../model/bdd/conn_db.php";
 require "../../model/CRUD/crud_user.php";
-// s'il y a eu une requete post, alors...
+// appelle le crud user pour les fonctions user  create etc
 $crud_user = new user($pdo);
+// s'il y a eu une requete post, alors...
 if($_SERVER['REQUEST_METHOD'] == 'POST')
     {
+        // passe le pseudo en minuscule, récupère les données
         $pseudo = strtolower(trim($_POST['pseudo']));
         $mdp = $_POST['mdp'];
+        // chiffre le modp de la même manière qu'a la création de compte pour la correspondance
         $new_mdp = md5($mdp . $pseudo);
         $email = $_POST['email'];
-        
+        //lance la fonction qui récupère les données utilisateurs 
         $resultat = $crud_user->getUser($pseudo, $new_mdp, $email);
-        //var_dump($resultat);
-        //var_dump($resultat);
-        //die();
         if(!$resultat) 
             {
+                // si pas de correspondance
                 echo "<div class='alert alert-danger'> nom d'utilisateur ou mot de passe incorrect ! Essayez a nouveau.</div>";
             }
         else 
             {
+                // définit la session avec l'id et le pseudo de l'utilisateur
                 $_SESSION['pseudo'] = $pseudo;
                 $_SESSION['user_id'] = $resultat['user_id'];
-                var_dump($_SESSION);
-                //session_start();
-                var_dump($_SESSION);
-                //die();
-                //sleep(5);
+                // fin d'écriture de session - possiblement inutile, mais difficultés a garder session ouverte sans
                 session_write_close();
                 echo "<div class='alert alert-success'> Vous êtes connecté! </div>";
                 var_dump($_SESSION);
-                //header("location: ../../index.php");
-                // session_regenerate_id(true);
-                // die();
-                // session_regenerate_id(true);
-                //exit();
-                // session_regenerate_id(true);
+                header("location: ../../index.php");
+
 
             }
 
@@ -68,5 +64,5 @@ include "../../view/includes/header.php";
     </form>
 </div>
 <br><br>
-
+<!-- footer -->
 <?php include '../../view/includes/footer.php'; ?>
