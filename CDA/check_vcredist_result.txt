@@ -10,5 +10,5 @@ Visual C++ 2015-2019 x64 Minimum Runtime - 14.28.29325
 **** NOT INSTALLED ****
 Installation file is on: http://wampserver.aviatechno.net
 VC 2015-2019 (VC16 x64) 14.28.29325
-----------------------------------------
+-------------------------------------------
 
