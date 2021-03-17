@@ -38,7 +38,7 @@ include ($_SERVER['DOCUMENT_ROOT']."alourencin/web/jarditouthefinal/view/include
               <!-- via noms de variables php -->
               <tbody>
         <tr>
-            <th id="photo2" class="bg-warning"><img width='150' src="../assets/IMG/<?php echo $r['pro_id'].".".$r['pro_photo'] ?>" class="img-thumbnail"></th>
+            <th id="photo2" class="bg-warning"><img width='150' src="../assets/IMG/<?php echo $r['pro_id'].".".$r['pro_photo'] ?>" class="img-thumbnail rounded-circle"></th>
             <td><?php echo $r['pro_id'] ?></td>
             <td class="bg-warning"><a href="../view/details.php?id=<?php echo $r['pro_id']; ?>" class="text-danger"><u><b><?php echo strtoupper($r['pro_libelle']); ?></b></u></td>
             <td><?php echo $r['pro_prix'] ?></td>
