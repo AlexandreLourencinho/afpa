@@ -130,13 +130,13 @@ class crud
             if($stmt->execute())
             {
                 //$message = "Le produit a été rajouté dans la base de données";               
-                $message = "Insertion réussie";
+                //$message = "Insertion réussie";
                 //return true;    
                 return array('result' => true, 'pro_id' => $pro_id);
             }
             else
             {
-                $message = "Echec de l'insertion";
+                 echo $message = "Echec de l'insertion";
             }
         }
         // si erreur
