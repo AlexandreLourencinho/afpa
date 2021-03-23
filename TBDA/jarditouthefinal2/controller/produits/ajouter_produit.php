@@ -26,7 +26,7 @@ include ($_SERVER['DOCUMENT_ROOT']."alourencin/web/jarditouthefinal/view/include
     <div id="cover-caption">
         <div class="container">
             <div class="row">
-                <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
+                <div class="col-xl-10 col-lg-10 col-md-8 col-sm-10 mx-auto text-center form p-4">
                     <div class="card col-12 shadow-lg">                    
                         <form method="POST" action="<?php $_SERVER['DOCUMENT_ROOT']?>/alourencin/jarditouthefinal/model/produits/ajouter_produit_script.php" enctype="multipart/form-data">
                             <div class="form-group">
