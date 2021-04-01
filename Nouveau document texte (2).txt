@@ -1,0 +1,5 @@
+<a class="nav-link" href="<?php $_SERVER['DOCUMENT_ROOT']?>/bnekouei/Vue/contact.php" title="Contact"                   >Contact</a                 >
+$_SERVER['DOCUMENT_ROOT']."/alourencin/web/jarditou/
+$_SERVER['DOCUMENT_ROOT']
+require ($_SERVER['DOCUMENT_ROOT']."alourencin/web/jarditouthefinal/model/bdd/conn_db.php");
+<?php $_SERVER['DOCUMENT_ROOT']?>/alourencin/jarditouthefinal/assets/IMG/promotion.jpg"
