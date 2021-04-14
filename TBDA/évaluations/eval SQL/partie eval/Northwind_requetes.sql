@@ -82,7 +82,7 @@ GROUP BY  Pays
 
 /*7 – Montant des ventes de 1997 : ---------------------------------------------------------------------------------------*/
 
-SELECT  SUM(UnitPrice*Quantity) AS "montant ventes 97"
+SELECT  SUM(UnitPrice*Quantity) AS 'montant ventes 97'
 
 FROM    orderdetails
 
