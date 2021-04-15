@@ -25,8 +25,6 @@ CREATE TRIGGER t_stock AFTER UPDATE ON produit FOR EACH ROW
 BEGIN
 DECLARE code_article CHAR(4);
 DECLARE qte_com INT;
-DECLARE tot INT;
-DECLARE prixu INT;
 DECLARE stock_alerte INT;
 declare stock_phy int;  
 DECLARE temp_qte_com INT;   
