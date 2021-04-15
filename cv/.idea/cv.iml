@@ -8,6 +8,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+<<<<<<< HEAD
     <orderEntry type="library" name="bootstrap" level="application" />
+=======
+>>>>>>> origin/master
   </component>
 </module>
