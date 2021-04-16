@@ -35,7 +35,7 @@ IF ((stock_phy < stock_alerte) AND (code_article NOT IN (select codart FROM arti
 SET qte_com = (stock_alerte - stock_phy);
 INSERT INTO article_a_commander VALUES (NULL, code_article, qte_com, CURDATE());
 ELSE 
-SET temp_qte_com = (SELECT sum(quantite_commande) FROM article_a_commander WHERE article_a_commander.codart = code_article);
+SET temp_qte_com = (SELECT SUM(quantite_commande) FROM article_a_commander WHERE article_a_commander.codart = code_article);
 SET qte_com = (stock_alerte-stock_phy)-(temp_qte_com);
 INSERT INTO article_a_commander VALUES (NULL, code_article, qte_com, CURDATE());
 END if;
