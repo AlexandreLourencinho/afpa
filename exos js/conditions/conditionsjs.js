@@ -59,3 +59,41 @@ function calculatrice() {
             document.getElementById("errOp").innerHTML = 'roh mais un signe d\'opération bon dieu de bon sang!';
     }
 }
+
+function participation(){
+    let nbEnfants = document.getElementById('nbenf').value
+    let maria=document.querySelector('input[name="marie"]:checked').value;
+    let salairem=document.getElementById('salm').value;
+    let aide;
+    console.log(maria);
+    if(maria==1){
+        aide = 25
+    }
+    else
+    {
+        aide=20;
+    }
+    aide+=nbEnfants*10;
+    if(salairem<1200)
+    {
+        aide+=10;
+    }
+    if(aide>50)
+    {
+        aide=50;
+    }
+document.getElementById('remise').innerHTML = 'La participation du patron ce gros connard de privilégié de mâle blanc cis hétéro dominateur not queer friendly est de '+aide+'%.';
+}
+let magic = parseInt(Math.random()*100);
+console.log(magic);
+function nbMagique(){
+    let nb=document.getElementById('nbma').value;
+        if(nb<magic)
+        {
+            document.getElementById('resultma').innerHTML = "c'est plus grand!";
+        }
+        else if(nb>magic)
+            document.getElementById('resultma').innerHTML = "c'est plus petit!";
+    else
+            document.getElementById('resultma').innerHTML = "BRAVO!";
+}
