@@ -8,42 +8,37 @@
     <link rel="stylesheet" href="./assets/style.css">
     <title>CV Lourencinho Alexandre</title>
 </head>
-<body class="bg-secondary">
+<body>
 <div class="d-flex justify-content-center">
 <div class="neon d-flex justify-content-center p-0 m-0">
-    <h1 spellcheck="false" >CV Alexandre Lourencinho</h1>
+    <h1>Alexandre Lourencinho</h1>
 </div>
 </div>
 <br>
 <!-- carousel -->
 <div class="d-flex justify-content-center carouche transform mx-auto" id="carouche">
 <div id="carouselExampleIndicators" class="carousel slide col-6" data-ride="carousel">
-    <ol class="carousel-inner">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <a href="#"  class="d-flex justify-content-center align-items-center"><img class="imgcarou" src="./assets/github.png" alt="première slide : mon présent et mon futur"></a>
+            <a href="#"  class="d-flex justify-content-center mx-auto"><img class="imgcarou" src="./assets/github.png" alt="première slide : mon présent et mon futur"></a>
             <div class="carousel-caption textcar">
                 <div class="d-flex justify-content-center"><p class="h5 neonpr">Mon Github</p></div>
             </div>
         </div>
         <div class="carousel-item">
-            <a href="#" class="d-flex justify-content-center align-items-center"><img class="imgcarou" src="./assets/discord.png"  alt="deuxième slide : mon expérience passée"></a>
+            <a href="#" class="d-flex justify-content-center mx-auto"><img class="imgcarou" src="./assets/discord.png"  alt="deuxième slide : mon expérience passée"></a>
             <div class="carousel-caption textcar">
             <p class="h5 neonpr">Mon discord</p>
             </div>
         </div>
         <div class="carousel-item">
-            <a href="mailto:lourencinho.alexandre@protonmai.com" class="d-flex justify-content-center align-items-center"><img class="imgcarou" src="./assets/mail.png" alt="troisième slide : mes formations"></a>
+            <a href="mailto:lourencinho.alexandre@protonmai.com" class="d-flex justify-content-center mx-auto"><img class="imgcarou" src="./assets/mail.png" alt="troisième slide : mes formations"></a>
             <div class="carousel-caption textcar">
                 <div class="d-flex justify-content-center"> <p class="h5 neonpr">Envoyez un mail</p></div>
             </div>
         </div>
         <div class="carousel-item">
-            <a href="#" class="d-flex justify-content-center align-items-center"><img class="imgcarou" src="./assets/formulaire.png"  alt="deuxième slide : mon expérience passée"></a>
+            <a href="#" class="d-flex justify-content-center mx-auto" id="contact"><img class="imgcarou" src="./assets/formulaire.png"  alt="deuxième slide : mon expérience passée"></a>
             <div class="carousel-caption" id="textcar">
                 <p class="h5 neonpr">Formulaire de contact!</p>
             </div>
@@ -61,19 +56,22 @@
 </div>
 <br>
 <!--formulaire-->
-<form class="d-flex align-items-center flex-column form-group">
-    <input type="text" placeholder="sujet de votre message" class="form-control col-4">
-    <input type="text" placeholder="votre email" class="form-control col-4">
-    <textarea placeholder="votre message ici" class="form-control col-4"></textarea>
-    <button type="button">envoyer !</button>
+<form class="d-none" id="formulaire">
+    <label for="sujet">Le sujet de votre message * :</label>
+    <input type="text" id="sujet" placeholder="sujet de votre message" class="form-control col-4">
+    <label for="mail"> Votre email * :</label>
+    <input type="text" placeholder="votre email" id="mail" class="form-control col-4">
+    <label for="message">Votre message : *</label>
+    <textarea placeholder="votre message ici" id="message" class="form-control col-4"></textarea>
+    <button type="button" class="btn envoi">envoyer !</button>
 </form>
 <!-- accordéon-->
-<div id="accordion">
+<div id="accordion" class="vide">
     <div class="d-flex justify-content-center align-items-center flex-column">
     <div class="card"></div>
         <div class="card-header col-2" id="headingOne">
             <p class=" h5 mb-0 d-flex justify-content-center">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#ppro" id="nionppro" onclick="neonPrPpro();" aria-expanded="false" aria-controls="ppro">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#ppro" id="nionppro" aria-expanded="false" aria-controls="ppro">
                     Mon projet professionnel
                 </button>
             </p>
@@ -89,7 +87,7 @@
     <div class="card"></div>
         <div class="card-header col-2" id="headingTwo">
             <p class="h5 mb-0 d-flex justify-content-center">
-                <button class="btn btn-link collapsed" id="nionmc" onclick="neonGyMc()" data-toggle="collapse" data-target="#compet" aria-expanded="false" aria-controls="compet">
+                <button class="btn btn-link collapsed" id="nionmc" data-toggle="collapse" data-target="#compet" aria-expanded="false" aria-controls="compet">
                     Mes compétences
                 </button>
             </p>
@@ -105,7 +103,7 @@
     <div class="card"></div>
         <div class="card-header col-2" id="headingThree">
             <p class="h5 mb-0 d-flex justify-content-center">
-                <button class="btn btn-link collapsed" id="nionxp" onclick="neonBrXp()" data-toggle="collapse" data-target="#xppas" aria-expanded="false" aria-controls="xppas">
+                <button class="btn btn-link collapsed" id="nionxp" data-toggle="collapse" data-target="#xppas" aria-expanded="false" aria-controls="xppas">
                     Mes expériences passées
                 </button>
             </p>
@@ -121,7 +119,7 @@
     <div class="card"></div>
             <div class="card-header col-2" id="headingFour">
             <p class="h5 mb-0 d-flex justify-content-center">
-                <button class="btn btn-link collapsed" id="nionpb" onclick="neonPbMf()"  data-toggle="collapse" data-target="#forma" aria-expanded="false" aria-controls="forma">
+                <button class="btn btn-link collapsed" id="nionpb" data-toggle="collapse" data-target="#forma" aria-expanded="false" aria-controls="forma">
                     Mes formations
                 </button>
             </p>
