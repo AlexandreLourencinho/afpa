@@ -1,3 +1,4 @@
+/*police utilisée pour le titre */
 @font-face {
     font-family: 'neoneonregular';
     src: url('neoneon-webfont.eot');
@@ -9,46 +10,45 @@
     font-style: normal;
 
 }
-.text-noir{
-    color: black;
+/*non affichage du petit titre utilisé seulement en responsive */
+.titre-petit{
+    display: none;
 }
+/*augmentation de la taille de la police dans les boutons bootstrap*/
 .btn{
     font-size: 1.9rem;
 }
+/*réduction taille des images en lien dans le carousel*/
 a {
     width: 50%;
 }
+/*couleur de la police et du fond des boutons du formulaire */
 .btn.envoi{
     background: rgba(0, 151, 19, 0.1);
     color: #9d0bc9;
 }
-.card{
-    background: rgba(0, 151, 19, 0.1);
-}
+/*suppression couleur fond des cartes de l'accordéon (titre)*/
 .card-header{
     background: rgba(0, 151, 19, 0) !important;
 }
+/*image de fond de la page, étirée a toute la page */
 body{
     background-image: url('synth.jpg') ;
     background-size: cover;
 }
-.bg-gris{
-    background-color: gray;
-}
+/*fixe la taile de l'image de base dans le carousel */
 img.imgcarou{
     width: 50%;
     height: 80%;
-
 }
-.card-header{
-    background-color: #343a40;
-}
+/*police d'écriture, position et luminosité du titre de la page */
 .neon {
     font-family: 'neoneonregular';
     position: relative;
     overflow: hidden;
     filter: brightness(190%);
 }
+/*set up de l'animation néon pour le texte du carousel*/
 .neonpr {
     font-size: 1.9rem;
     color: #fff;
@@ -57,7 +57,7 @@ img.imgcarou{
     -moz-animation: glow 1s ease-in-out infinite alternate;
     animation: glow 1s ease-in-out infinite alternate;
 }
-
+/*propriétées / keyframes de l'animation */
 @-webkit-keyframes glow {
     from {
         text-shadow: 0 0 5px #8003f6, 0 0 10px #8726e7, 0 0 15px #a85ff1, 0 0 20px #b49ede, 0 0 25px #e60073, 0 0 30px #e60073, 0 0 35px #e60073;
@@ -66,6 +66,7 @@ img.imgcarou{
         text-shadow: 0 0 10px #fff, 0 0 15px #ffb3d8, 0 0 20px #ef74b1, 0 0 25px #ff4da6, 0 0 30px #ff4da6, 0 0 35px #ff4da6, 0 0 40px #ff4da6;
     }
 }
+/*set up des classes et animations néon pour les titres des cartes de l'accordéon, ici pour "mes expériences passées" */
 .neonbr {
     font-size: 1.9rem;
     color: #fff;
@@ -83,6 +84,7 @@ img.imgcarou{
         text-shadow: 0 0 20px #fff, 0 0 30px #e07c7c, 0 0 40px #de4141, 0 0 50px #ff0000, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
     }
 }
+/*set up des classes et animations néon pour les titres des cartes de l'accordéon, ici pour "mes compétences" */
 .neongy {
     font-size: 1.9rem;
     color: #fff;
@@ -100,6 +102,7 @@ img.imgcarou{
         text-shadow: 0 0 20px #fff, 0 0 30px #ffdb6f, 0 0 40px #debc3b, 0 0 50px #a78400, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
     }
 }
+/*set up des classes et animations néon pour les titres des cartes de l'accordéon, ici pour "mes formations" */
 .neonpb {
     font-size: 15px;
     color: #fff;
@@ -118,7 +121,7 @@ img.imgcarou{
     }
 }
 
-/*@import url(https://fonts.googleapis.com/css?family=Exo+2:200i);*/
+/*animations et keyframes pour le titre */
 
 :root {
     /* Base font size */
@@ -169,13 +172,6 @@ h1:focus {
                 0 0 6rem var(--neon-text-color),
                 0 0 8rem var(--neon-text-color);
 
-        /*box-shadow:*/
-        /*        0 0 .5rem rgb(1, 68, 57),*/
-        /*        inset 0 0 .5rem rgb(3, 120, 103);*/
-                /*0 0 2rem var(--neon-border-color),*/
-                /*inset 0 0 2rem var(--neon-border-color),*/
-                /*0 0 4rem var(--neon-border-color),*/
-                /*inset 0 0 4rem var(--neon-border-color);*/
     }
 
     20%, 24%, 55% {
@@ -184,6 +180,7 @@ h1:focus {
     }
 }
 
+/*animation de disparition */
 @keyframes myAnimation{
     0%{
         opacity: 1;
@@ -313,20 +310,24 @@ h1:focus {
         transform: scaleY(0)  ;
     }
 }
+/*set up de la taille de base du carousel afin que ce soit la taille de référence pour les animations*/
 .carouche{
     width: 100%;
 }
+/*classe permettant l'utilisation de l'animation de disparition */
 .testanimation{
     animation-name: myAnimation;
     animation-duration: 500ms;
     animation-fill-mode: forwards;
 }
-
+ /*classe permettant l'utilisation de l'animation d'apparition */
 .testanimationn{
     animation-name: myAnimationn;
     animation-duration: 500ms;
     animation-fill-mode: forwards;
 }
+
+/*animation d'apparition  */
 @keyframes myAnimationn{
     0%{
         margin-left: auto;
@@ -463,8 +464,23 @@ h1:focus {
         width: 100%;
     }
 }
+.btn-link {
+    color: #26e7d7;
+}
+button.btn-link:hover {
+    color: #ba00ff;
+}
+
+/*mediaqueries selon mon bon vouloir! */
 @media screen and (max-width: 768px) {
     .textcar {
         display: none;
+    }
+    .titreneon {
+        display: none;
+    }
+    .titre-petit {
+        display: block;
+        color: #1c50ec;
     }
 }

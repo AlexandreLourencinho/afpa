@@ -9,82 +9,117 @@
     <title>CV Lourencinho Alexandre</title>
 </head>
 <body>
+/*titre de la page en néon*/
 <div class="d-flex justify-content-center">
-<div class="neon d-flex justify-content-center p-0 m-0">
-    <h1>Alexandre Lourencinho</h1>
-</div>
+    <div class="neon d-flex justify-content-center p-0 m-0">
+        <h1 class="titreneon">Alexandre Lourencinho</h1>
+    </div>
+    <div>
+        <p class="h2 titre-petit">Cv lourencinho Alexandre</p>
+    </div>
 </div>
 <br>
 <!-- carousel -->
 <div class="d-flex justify-content-center carouche transform mx-auto" id="carouche">
-<div id="carouselExampleIndicators" class="carousel slide col-6" data-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <a href="#"  class="d-flex justify-content-center mx-auto"><img class="imgcarou" src="./assets/github.png" alt="première slide : mon présent et mon futur"></a>
-            <div class="carousel-caption textcar">
-                <div class="d-flex justify-content-center"><p class="h5 neonpr">Mon Github</p></div>
+    <div id="carouselExampleIndicators" class="carousel slide col-6" data-ride="carousel">
+        <div class="carousel-inner">
+<!--            carousel - première slide - logo et lien github-->
+            <div class="carousel-item active">
+                <a href="#"  class="d-flex justify-content-center mx-auto">
+                    <img class="imgcarou" src="./assets/github.png" alt="logo github" title="Cliquez pour aller sur mon github!">
+                </a>
+                <div class="carousel-caption textcar">
+                    <div class="d-flex justify-content-center"><p class="h5 neonpr">Mon Github</p></div>
+                </div>
+            </div>
+<!--            carousel - logo et lien discord-->
+            <div class="carousel-item">
+                <a href="#" class="d-flex justify-content-center mx-auto">
+                    <img class="imgcarou" src="./assets/discord.png"  alt="logo discord" title="Cliquez ici pour être redirigé vers mon discord!">
+                </a>
+                <div class="carousel-caption textcar">
+                    <p class="h5 neonpr">Mon discord</p>
+                </div>
+            </div>
+<!--            carousel - mailto vers ma boite mail pro/ perso -->
+            <div class="carousel-item">
+                <a href="mailto:lourencinho.alexandre@protonmail.com" class="d-flex justify-content-center mx-auto">
+                    <img class="imgcarou" src="./assets/mail.png" alt="image email" title="Cliquez ici pour m'envoyer directement un email!">
+                </a>
+                <div class="carousel-caption textcar">
+                    <div class="d-flex justify-content-center">
+                        <p class="h5 neonpr">Envoyez un mail</p>
+                    </div>
+                </div>
+            </div>
+<!--            carousel - formulaire de contact-->
+            <div class="carousel-item">
+                <a href="#" class="d-flex justify-content-center mx-auto" id="contact">
+                    <img class="imgcarou" src="./assets/formulaire.png"  alt="image formulaire de contact" title="Contactez moi en cliquant ici ou sur mon mail!">
+                </a>
+                <div class="carousel-caption" id="textcar">
+                    <p class="h5 neonpr">Formulaire de contact!</p>
+                </div>
             </div>
         </div>
-        <div class="carousel-item">
-            <a href="#" class="d-flex justify-content-center mx-auto"><img class="imgcarou" src="./assets/discord.png"  alt="deuxième slide : mon expérience passée"></a>
-            <div class="carousel-caption textcar">
-            <p class="h5 neonpr">Mon discord</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <a href="mailto:lourencinho.alexandre@protonmai.com" class="d-flex justify-content-center mx-auto"><img class="imgcarou" src="./assets/mail.png" alt="troisième slide : mes formations"></a>
-            <div class="carousel-caption textcar">
-                <div class="d-flex justify-content-center"> <p class="h5 neonpr">Envoyez un mail</p></div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <a href="#" class="d-flex justify-content-center mx-auto" id="contact"><img class="imgcarou" src="./assets/formulaire.png"  alt="deuxième slide : mon expérience passée"></a>
-            <div class="carousel-caption" id="textcar">
-                <p class="h5 neonpr">Formulaire de contact!</p>
-            </div>
-        </div>
+<!--        contrôleurs du carousel-->
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div>
 </div>
 <br>
 <!--formulaire-->
-<form class="d-none" id="formulaire">
+<form class="d-none" id="formulaire" method="post" action="#">
+<!--    input pour le nom avec sa balsie d'erreur prête-->
+    <label for="nom">Votre nom : *</label>
+    <input type="text" placeholder="Votre nom ici" id="nom" class="form-control col-4" name="nom">
+    <div id="errNom" class="col-4"></div>
+<!--    input pour le prénom, même principe-->
+    <label for="prenom">Votre prénom : *</label>
+    <input type="text" placeholder="Votre prénom ici" id="prenom" class="form-control col-4" name="prenom">
+    <div id="errPrenom" class="col-4"></div>
+<!--    input pour le sujet -->
     <label for="sujet">Le sujet de votre message * :</label>
-    <input type="text" id="sujet" placeholder="sujet de votre message" class="form-control col-4">
+    <input type="text" id="sujet" placeholder="sujet de votre message" class="form-control col-4" name="sujet">
+    <div id="errSujet" class="col-4"></div>
+<!--    input pour le mail -->
     <label for="mail"> Votre email * :</label>
-    <input type="text" placeholder="votre email" id="mail" class="form-control col-4">
+    <input type="text" placeholder="votre email" id="mail" class="form-control col-4" name="mail">
+    <div id="errMail" class="col-4"></div>
+<!--    input pour le message -->
     <label for="message">Votre message : *</label>
-    <textarea placeholder="votre message ici" id="message" class="form-control col-4"></textarea>
-    <button type="button" class="btn envoi">envoyer !</button>
+    <textarea placeholder="votre message ici" id="message" class="form-control col-4" name="message"></textarea>
+    <div id="errMessage" class="col-4"></div>
+<!--    boutons envoyer et annuler / réini formulaire -->
+    <button type="submit" class="btn envoi" id="formulairecontact">envoyer !</button>
+    <button type="reset" class="btn envoi">Réinitialiser le formulaire</button>
 </form>
 <!-- accordéon-->
 <div id="accordion" class="vide">
     <div class="d-flex justify-content-center align-items-center flex-column">
-    <div class="card"></div>
-        <div class="card-header col-2" id="headingOne">
-            <p class=" h5 mb-0 d-flex justify-content-center">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#ppro" id="nionppro" aria-expanded="false" aria-controls="ppro">
-                    Mon projet professionnel
-                </button>
-            </p>
-        </div>
-        <div id="ppro" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-            <div class="card-body col-4">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+<!--        première carte de l'accordéon avec mon projet pro - titre -->
+            <div class="card-header col-2" id="headingOne">
+                <p class=" h5 mb-0 d-flex justify-content-center">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#ppro" id="nionppro" aria-expanded="false" aria-controls="ppro">
+                        Mon projet professionnel
+                    </button>
+                </p>
             </div>
-        </div>
+        <!--        première carte de l'accordéon avec mon projet pro - contenu -->
+            <div id="ppro" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body col-4">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+            </div>
     </div>
-
+<!--    deuxième carte, ici avec mes compétences - titre -->
     <div class="d-flex justify-content-center align-items-center flex-column">
-    <div class="card"></div>
         <div class="card-header col-2" id="headingTwo">
             <p class="h5 mb-0 d-flex justify-content-center">
                 <button class="btn btn-link collapsed" id="nionmc" data-toggle="collapse" data-target="#compet" aria-expanded="false" aria-controls="compet">
@@ -92,61 +127,50 @@
                 </button>
             </p>
         </div>
+        <!--    deuxième carte, ici avec mes compétences - contenu -->
         <div id="compet" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
             <div class="card-body">
                 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
             </div>
         </div>
     </div>
-
-<div class="d-flex justify-content-center align-items-center flex-column">
-    <div class="card"></div>
+<!--    troisième carte, mes expériences passées - titre-->
+    <div class="d-flex justify-content-center align-items-center flex-column">
         <div class="card-header col-2" id="headingThree">
             <p class="h5 mb-0 d-flex justify-content-center">
-                <button class="btn btn-link collapsed" id="nionxp" data-toggle="collapse" data-target="#xppas" aria-expanded="false" aria-controls="xppas">
+                     <button class="btn btn-link collapsed text-shadow" id="nionxp" data-toggle="collapse" data-target="#xppas" aria-expanded="false" aria-controls="xppas" name="Hover">
                     Mes expériences passées
                 </button>
             </p>
         </div>
+        <!--    troisième carte, mes expériences passées - contenu-->
         <div id="xppas" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
             <div class="card-body">
                 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
             </div>
         </div>
     </div>
-
-<div class="d-flex justify-content-center align-items-center flex-column">
-    <div class="card"></div>
-            <div class="card-header col-2" id="headingFour">
+<!--    quatrième et dernière carte, mes formations - titre-->
+    <div class="d-flex justify-content-center align-items-center flex-column">
+        <div class="card-header col-2" id="headingFour">
             <p class="h5 mb-0 d-flex justify-content-center">
                 <button class="btn btn-link collapsed" id="nionpb" data-toggle="collapse" data-target="#forma" aria-expanded="false" aria-controls="forma">
                     Mes formations
                 </button>
             </p>
         </div>
+        <!--    quatrième et dernière carte, mes formations - contenu-->
         <div id="forma" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
             <div class="card-body">
                 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
             </div>
         </div>
     </div>
-
-
-
-
-
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-<script src="assets/cvscripts.js"></script>
 </div>
-
+<script src="assets/checkForm.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="assets/cvscripts.js"></script>
 </body>
 </html>

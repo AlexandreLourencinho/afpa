@@ -34,7 +34,7 @@ neon2.onclick= function (){
     }
 }
 const neon3 = document.getElementById('nionxp');
-neon3.onclic= function ()
+neon3.onclick = function ()
 {
     let monXp = document.getElementById('nionxp').className;
     let cartouche = document.getElementById('carouche').className;
