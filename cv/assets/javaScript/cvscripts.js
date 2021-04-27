@@ -4,14 +4,14 @@ neon1.onclick= function(){
     let cartouche = document.getElementById('carouche').className;
     if(projpro=='btn btn-link neonpr' && cartouche=='d-flex testanimation justify-content-center')
     {
-        document.getElementById('nionppro').className="btn btn-link collapsed";
-        document.getElementById('carouche').className="d-flex testanimationn justify-content-center";
+        document.getElementById('nionppro').className="btn btn-link collapsed testneon";
+        document.getElementById('carouche').className="d-flex testanimationn justify-content-center mx-auto";
     }
     else {
         document.getElementById('nionppro').className = "btn btn-link neonpr";
-        document.getElementById('nionmc').className="btn btn-link collapsed";
-        document.getElementById('nionxp').className="btn btn-link collapsed";
-        document.getElementById('nionpb').className="btn btn-link collapsed";
+        document.getElementById('nionmc').className="btn btn-link collapsed testneon";
+        document.getElementById('nionxp').className="btn btn-link collapsed testneon";
+        document.getElementById('nionpb').className="btn btn-link collapsed testneon";
         document.getElementById('carouche').className="d-flex testanimation justify-content-center";
     }
 }
@@ -21,14 +21,14 @@ neon2.onclick= function (){
     let cartouche = document.getElementById('carouche').className;
     if(mesComp=='btn btn-link neongy' && cartouche=='d-flex testanimation justify-content-center')
     {
-        document.getElementById('nionmc').className="btn btn-link collapsed";
-        document.getElementById('carouche').className="d-flex testanimationn justify-content-center";
+        document.getElementById('nionmc').className="btn btn-link collapsed testneon";
+        document.getElementById('carouche').className="d-flex testanimationn justify-content-center mx-auto";
     }
     else
     {
-        document.getElementById('nionppro').className="btn btn-link collapsed";
-        document.getElementById('nionxp').className="btn btn-link collapsed";
-        document.getElementById('nionpb').className="btn btn-link collapsed";
+        document.getElementById('nionppro').className="btn btn-link collapsed testneon";
+        document.getElementById('nionxp').className="btn btn-link collapsed testneon";
+        document.getElementById('nionpb').className="btn btn-link collapsed testneon";
         document.getElementById('nionmc').className="btn btn-link neongy";
         document.getElementById('carouche').className="d-flex testanimation justify-content-center";
     }
@@ -40,15 +40,15 @@ neon3.onclick = function ()
     let cartouche = document.getElementById('carouche').className;
     if(monXp=='btn btn-link neonbr' && cartouche=='d-flex testanimation justify-content-center')
     {
-        document.getElementById('nionxp').className="btn btn-link collapsed";
-        document.getElementById('carouche').className="d-flex testanimationn justify-content-center";
+        document.getElementById('nionxp').className="btn btn-link collapsed testneon";
+        document.getElementById('carouche').className="d-flex testanimationn justify-content-center mx-auto";
     }
     else
     {
-        document.getElementById('nionppro').className="btn btn-link collapsed";
+        document.getElementById('nionppro').className="btn btn-link collapsed testneon";
         document.getElementById('nionxp').className="btn btn-link neonbr";
-        document.getElementById('nionpb').className="btn btn-link collapsed";
-        document.getElementById('nionmc').className="btn btn-link collapsed";
+        document.getElementById('nionpb').className="btn btn-link collapsed testneon";
+        document.getElementById('nionmc').className="btn btn-link collapsed testneon";
         document.getElementById('carouche').className="d-flex testanimation justify-content-center";
     }
 }
@@ -59,15 +59,15 @@ neon4.onclick= function ()
     let cartouche = document.getElementById('carouche').className;
     if(mesFor=='btn btn-link neonpb' && cartouche=='d-flex testanimation justify-content-center')
     {
-        document.getElementById('nionpb').className="btn btn-link collapsed";
-        document.getElementById('carouche').className="d-flex testanimationn justify-content-center";
+        document.getElementById('nionpb').className="btn btn-link collapsed testneon";
+        document.getElementById('carouche').className="d-flex testanimationn justify-content-center mx-auto";
     }
     else
     {
-        document.getElementById('nionppro').className="btn btn-link collapsed";
-        document.getElementById('nionxp').className="btn btn-link collapsed";
+        document.getElementById('nionppro').className="btn btn-link collapsed testneon";
+        document.getElementById('nionxp').className="btn btn-link collapsed testneon";
         document.getElementById('nionpb').className="btn btn-link neonpb";
-        document.getElementById('nionmc').className="btn btn-link collapsed";
+        document.getElementById('nionmc').className="btn btn-link collapsed testneon";
         document.getElementById('carouche').className="d-flex testanimation justify-content-center";
     }
 }
@@ -94,6 +94,11 @@ retour.onclick = function(){
     console.log(vuForm,"//",cartouche,"//",accord);
     if(vuForm=="d-flex align-items-center flex-column form-group testanimationn" && cartouche == "d-flex testanimation justify-content-center" && accord == "testanimation")
     {
+        document.getElementById('errMessage').innerHTML = "";
+        document.getElementById('errSujet').innerHTML = "";
+        document.getElementById('errMail').innerHTML = "";
+        document.getElementById('errPrenom').innerHTML = "";
+        document.getElementById('errNom').innerHTML = "";
         document.getElementById('formulaire').className="d-flex align-items-center flex-column form-group formdisp"
         setTimeout(function(){document.getElementById('formulaire').className="d-none";},501)
         setTimeout(function(){document.getElementById('carouche').className="d-flex testanimationn justify-content-center mx-auto"},502);

@@ -1,6 +1,7 @@
 /* Déclaration des Regexp qui permettront la validation - ou non- du formulaire
  Récupération avec la const form qui permet l'utilisation du onclick, plus bas*/
 const form = document.getElementById('formulairecontact');
+const formReset = document.getElementById('formulaireset');
 // Regexp pour le nom et le prénom : caractères interdits : apostrophes, guillemets, chevrons, parenthèses, chiffres, point, slash, arobase
 const fnom = new RegExp(/^[^'"<>0-9@./()]+$/g);
 /* Regexp pour le mail : pattern sur principe du "tout autorisé sauf apostrophe guillemets chevrons espaces arobase" puis arobase puis "tout autorisé sauf apostrophe guillemets chevrons arobase espaces" puis
@@ -108,3 +109,10 @@ form.onclick = function() {
     /* retour de la variable bool qui permet ou non l'envoi du formulaire*/
     return bool;
 };
+formReset.onclick = function() {
+    document.getElementById('errMessage').innerHTML = "";
+    document.getElementById('errSujet').innerHTML = "";
+    document.getElementById('errMail').innerHTML = "";
+    document.getElementById('errPrenom').innerHTML = "";
+    document.getElementById('errNom').innerHTML = "";
+}
