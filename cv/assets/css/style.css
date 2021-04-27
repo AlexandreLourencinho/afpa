@@ -1,14 +1,31 @@
 /*police utilisée pour le titre */
 @font-face {
     font-family: 'neoneonregular';
-    src: url('neoneon-webfont.eot');
-    src: url('neoneon-webfont.eot?#iefix') format('embedded-opentype'),
-    url('neoneon-webfont.woff2') format('woff2'),
-    url('neoneon-webfont.woff') format('woff'),
-    url('neoneon-webfont.svg#neoneonregular') format('svg');
+    src: url('../fonts/neoneon-webfont.eot');
+    src: url('../fonts/neoneon-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/neoneon-webfont.woff2') format('woff2'),
+    url('../fonts/neoneon-webfont.woff') format('woff'),
+    url('../fonts/neoneon-webfont.svg#neoneonregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
+}
+@font-face {
+    font-family: 'newyorkregular';
+    src: url('../fonts/newyork-webfont.eot');
+    src: url('../fonts/newyork-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/newyork-webfont.woff2') format('woff2'),
+    url('../fonts/newyork-webfont.woff') format('woff'),
+    url('../fonts/newyork-webfont.ttf') format('truetype'),
+    url('../fonts/newyork-webfont.svg#newyorkregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+.htext{
+    font-family: newyorkregular ;
+    font-size: x-large;
+    color: #a85ff1;
 }
 /*non affichage du petit titre utilisé seulement en responsive */
 .titre-petit{
@@ -33,7 +50,7 @@ a {
 }
 /*image de fond de la page, étirée a toute la page */
 body{
-    background-image: url('synth.jpg') ;
+    background-image: url('../img/synth.jpg') ;
     background-size: cover;
 }
 /*fixe la taile de l'image de base dans le carousel */
@@ -464,13 +481,155 @@ h1:focus {
         width: 100%;
     }
 }
+
 .btn-link {
     color: #26e7d7;
 }
 button.btn-link:hover {
     color: #ba00ff;
 }
-
+.formdisp{
+    animation-name: animForm;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+/*animation de disparition */
+@keyframes animForm{
+    0%{
+        opacity: 1;
+    }
+    5%{
+        margin-left: auto;
+        margin-right: auto;
+        width: 95% !important;
+        opacity: 0.95;
+    }
+    10%{
+        margin-left: auto;
+        margin-right: auto;
+        width: 90% !important;
+        opacity: 0.9;
+    }
+    15%{
+        margin-left: auto;
+        margin-right: auto;
+        width: 85% !important;
+        opacity: 0.85;
+    }
+    20%{
+        margin-left: auto;
+        margin-right: auto;
+        width: 80% !important;
+        opacity: 0.8;
+    }
+    25%{
+        margin-left: auto;
+        margin-right: auto;
+        width: 75% !important;
+        opacity: 0.75;
+    }
+    30%{
+        margin-left: auto;
+        margin-right: auto;
+        width: 70% !important;
+        opacity: 0.7;
+    }
+    35%{
+        margin-left: auto;
+        margin-right: auto;
+        width: 65%;
+        opacity: 0.65;
+    }
+    40%{
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+        opacity: 0.6;
+    }
+    45%{
+        margin-left: auto;
+        margin-right: auto;
+        width: 55%;
+        opacity: 0.55;
+    }
+    50%{
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 0.5;
+        transform: scaleY(0.5) ;
+        width: 50%;
+        animation-play-state: paused;
+    }
+    55%{
+        margin-left: auto;
+        margin-right: auto;
+        width: 45%;
+        opacity: 0.45;
+    }
+    60%{
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+        opacity: 0.4;
+    }
+    65%{
+        margin-left: auto;
+        margin-right: auto;
+        width: 35%;
+        opacity: 0.35;
+    }
+    70%{
+        margin-left: auto;
+        margin-right: auto;
+        left: 70%;
+        width: 30%;
+        opacity: 0.3;
+    }
+    75%{
+        margin-left: auto;
+        margin-right: auto;
+        width: 25%;
+        opacity: 0.25;
+    }
+    80%{
+        margin-left: auto;
+        margin-right: auto;
+        width: 20%;
+        opacity: 0.2;
+    }
+    85%{
+        margin-left: auto;
+        margin-right: auto;
+        width: 15%;
+        opacity: 0.15;
+    }
+    90%{
+        margin-left: auto;
+        margin-right: auto;
+        width: 10%;
+        opacity: 0.1;
+    }
+    95%{
+        margin-left: auto;
+        margin-right: auto;
+        width: 5%;
+        opacity: 0.05;
+    }
+    100%{
+        margin-left: auto;
+        margin-right: auto;
+        display: none !important;
+        opacity: 0;
+        width: 0 !important;
+        transform: scaleY(0)  ;
+    }
+}
+.paused{
+    -webkit-animation-play-state:paused;
+    -moz-animation-play-state:paused;
+    -o-animation-play-state:paused;
+    animation-play-state:paused;
+}
 /*mediaqueries selon mon bon vouloir! */
 @media screen and (max-width: 768px) {
     .textcar {

@@ -79,10 +79,26 @@ lienForm.onclick = function (){
     console.log(vuForm);
     console.log(cartouche);
     console.log(accord);
-    if(vuForm=="d-none" && cartouche=="d-flex justify-content-center carouche transform mx-auto" && accord=="vide"
-    ||cartouche=="d-flex testanimationn justify-content-center" && vuForm=="d-none" && accord=="vide"){
+    if(vuForm=="d-none formulaire" && cartouche=="d-flex justify-content-center carouche mx-auto" && accord=="vide"
+    ||cartouche=="d-flex testanimationn justify-content-center mx-auto" && vuForm=="d-none formulaire" && accord=="vide"){
         document.getElementById('carouche').className="d-flex testanimation justify-content-center";
         document.getElementById('accordion').className='testanimation';
         document.getElementById('formulaire').className="d-flex align-items-center flex-column form-group testanimationn"
+    }
+}
+const retour = document.getElementById('retour');
+retour.onclick = function(){
+    let vuForm = document.getElementById('formulaire').className;
+    let cartouche = document.getElementById('carouche').className;
+    let accord = document.getElementById('accordion').className;
+    console.log(vuForm,"//",cartouche,"//",accord);
+    if(vuForm=="d-flex align-items-center flex-column form-group testanimationn" && cartouche == "d-flex testanimation justify-content-center" && accord == "testanimation")
+    {
+        document.getElementById('formulaire').className="d-flex align-items-center flex-column form-group formdisp"
+        setTimeout(function(){document.getElementById('formulaire').className="d-none";},501)
+        setTimeout(function(){document.getElementById('carouche').className="d-flex testanimationn justify-content-center mx-auto"},502);
+        setTimeout(function() {document.getElementById('accordion').className='testanimationn'},502);
+        setTimeout(function() {document.getElementById('accordion').className='vide'},1005);
+        setTimeout(function(){document.getElementById('formulaire').className="d-none formulaire";},501)
     }
 }
