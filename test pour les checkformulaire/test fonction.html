@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<link rel="stylesheet" href="assets/css/style2.css">
+    <title>Document</title>
+</head>
+<body>
+<form class="formulaire" id="formulaire" method="post" action="#">
+  <!--    input pour le nom avec sa balsie d'erreur prête-->
+  <label for="nom" class="testneon2">Votre nom : *</label>
+  <input type="text" placeholder="Votre nom ici" id="nom" class="form-control col-4" name="nom">
+  <div id="errNom" class="d-none alert alert-danger col-4"></div>
+  <!--    input pour le prénom, même principe-->
+  <label for="prenom" class="testneon2">Votre prénom : *</label>
+  <input type="text" placeholder="Votre prénom ici" id="prenom" class="form-control col-4" name="prenom">
+  <div id="errPrenom" class="d-none alert alert-danger col-4"></div>
+  <!--    input pour le sujet -->
+  <label for="sujet" class="testneon2">Le sujet de votre message * :</label>
+  <input type="text" id="sujet" placeholder="sujet de votre message" class="form-control col-4" name="sujet">
+  <div id="errSujet" class="d-none alert alert-danger col-4"></div>
+  <!--    input pour le mail -->
+  <label for="mail" class="testneon2"> Votre email * :</label>
+  <input type="text" placeholder="votre email" id="mail" class="form-control col-4" name="mail">
+  <div id="errMail" class="d-none alert alert-danger col-4"></div>
+  <!--    input pour le message -->
+  <label for="message" class="testneon2">Votre message : *</label>
+  <textarea placeholder="votre message ici" id="message" class="form-control col-4" name="message" rows="5"
+            cols="33"></textarea>
+  <div id="errMessage" class="d-none alert alert-danger col-4"></div>
+  <!--    boutons envoyer et annuler / réini formulaire -->
+  <button type="submit" class="btn envoi" id="formulairecontact">envoyer !</button>
+  <button type="reset" class="btn envoi" id="formulaireset">Réinitialiser le formulaire</button>
+  <button type="button" class="btn envoi" id="retour">Retour</button>
+</form>
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+<script src="assets/javaScript/testjs.js"></script>
+</body>
+</html>

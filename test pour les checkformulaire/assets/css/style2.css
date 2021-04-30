@@ -1,0 +1,9 @@
+.borderedwrong{
+border-color: red;
+}
+.borderedgood{
+    border-color: limegreen;
+}
+.bordered2{
+    border-color: initial!important;
+}
